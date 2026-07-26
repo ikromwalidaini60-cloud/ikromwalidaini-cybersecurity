@@ -3,26 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IkromWalidaini Cyber Security</title>
+    <title>Ikrom Walidaini | Cyber Security</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Courier New',monospace;}
+        body{background:#050505;color:#00ff41;line-height:1.7;}
+        
+        /* Efek Matrix Latar */
+        #matrix-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.12;}
+
+        .container{max-width:1100px;margin:0 auto;padding:20px;position:relative;z-index:1;}
+        
+        header{text-align:center;padding:70px 20px;border-bottom:1px solid #00ff4140;}
+        .logo{font-size:3em;font-weight:bold;text-shadow:0 0 12px #00ff41;letter-spacing:3px;}
+        .tagline{font-size:1.4em;margin:12px 0;color:#00ccff;text-shadow:0 0 8px #00ccff;}
+        .deskripsi{margin:25px 0;opacity:0.9;font-size:1.1em;}
+
+        .foto-profil{width:200px;height:200px;border-radius:50%;border:3px solid #00ff41;box-shadow:0 0 20px #00ff4170;margin:25px auto;object-fit:cover;transition:0.3s;}
+        .foto-profil:hover{box-shadow:0 0 30px #00ff41;transform:scale(1.03);}
+
+        .sosmed{display:flex;gap:15px;justify-content:center;margin:35px 0;flex-wrap:wrap;}
+        .btn{padding:12px 25px;border:1px solid #00ff41;color:#00ff41;text-decoration:none;border-radius:6px;transition:all 0.3s ease;}
+        .btn:hover{background:#00ff41;color:#050505;box-shadow:0 0 15px #00ff41;}
+        .btn-wa{border-color:#25d366;color:#25d366;}
+        .btn-wa:hover{background:#25d366;color:#050505;box-shadow:0 0 15px #25d366;}
+        .btn-fb{border-color:#1877f2;color:#1877f2;}
+        .btn-fb:hover{background:#1877f2;color:#fff;box-shadow:0 0 15px #1877f2;}
+        .btn-ig{border-color:#e4405f;color:#e4405f;}
+        .btn-ig:hover{background:#e4405f;color:#fff;box-shadow:0 0 15px #e4405f;}
+        .btn-tg{border-color:#0088cc;color:#0088cc;}
+        .btn-tg:hover{background:#0088cc;color:#fff;box-shadow:0 0 15px #0088cc;}
+
+        section{margin:60px 0;padding:25px;border:1px solid #00ff4130;border-radius:8px;background:#0a0a0a80;backdrop-filter:blur(4px);}
+        h2{border-bottom:1px solid #00ff4150;padding-bottom:10px;margin-bottom:25px;text-shadow:0 0 6px #00ff41;}
+
+        .layanan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+        .card{border:1px solid #00ff4120;padding:18px;border-radius:6px;transition:0.3s;background:#080808;}
+        .card:hover{border-color:#00ff41;box-shadow:0 0 12px #00ff4140;transform:translateY(-5px);}
+
+        footer{text-align:center;padding:25px;border-top:1px solid #00ff4130;margin-top:50px;opacity:0.7;}
+    </style>
 </head>
-<body style="background:#111;color:white;text-align:center;font-family:Arial;padding:50px;">
+<body>
+    <!-- Latar Animasi Matrix -->
+    <canvas id="matrix-bg"></canvas>
 
-<h1>🛡️ IKROM WALIDAINI</h1>
+    <div class="container">
+        <header>
+            <div class="logo">🛡️ IKROM WALIDAINI</div>
+            <p class="tagline">Cyber Security — Protect · Detect · Secure</p>
+            <!-- Ganti link foto di bawah dengan foto kamu -->
+            <img src="https://i.imgur.com/8Z7XkLq.jpg" alt="Ikrom Walidaini" class="foto-profil">
+            <p class="deskripsi">Selamat datang di situs resmi saya. Praktisi keamanan siber yang berfokus pada pengujian keamanan sistem, pengamanan jaringan, dan perlindungan data.</p>
+            
+            <div class="sosmed">
+                <a href="https://wa.me/62895411239265" class="btn btn-wa">📱 WhatsApp</a>
+                <a href="#" class="btn btn-fb">📘 Facebook</a>
+                <a href="#" class="btn btn-tg">✈️ Telegram</a>
+                <a href="#" class="btn btn-ig">📸 Instagram</a>
+            </div>
+        </header>
 
-<h2>Cyber Security</h2>
+        <section>
+            <h2>👤 Tentang Saya</h2>
+            <p>Saya adalah Ikrom Walidaini, seorang yang mendalami dunia keamanan digital. Saya membantu individu maupun lembaga untuk melindungi sistem, menemukan celah keamanan sebelum dimanfaatkan pihak yang tidak bertanggung jawab, dan memberikan solusi pengamanan yang tepat.</p>
+        </section>
 
-<p>Protect • Detect • Secure</p>
+        <section>
+            <h2>💻 Layanan Saya</h2>
+            <div class="layanan-grid">
+                <div class="card">🔍 Penetration Testing</div>
+                <div class="card">🌐 Pengamanan Jaringan</div>
+                <div class="card">🛡️ Audit Keamanan Sistem</div>
+                <div class="card">⚙️ Konfigurasi Keamanan</div>
+                <div class="card">📑 Laporan & Rekomendasi</div>
+                <div class="card">💡 Konsultasi Keamanan Siber</div>
+            </div>
+        </section>
 
-<p>Selamat datang di website resmi Ikrom Walidaini.</p>
+        <section>
+            <h2>📞 Hubungi Saya</h2>
+            <p>Untuk kerja sama, konsultasi, atau pertanyaan seputar keamanan digital, silakan hubungi saya melalui tombol media sosial di atas, atau kirim pesan langsung lewat WhatsApp.</p>
+        </section>
 
-<p>
-<a href="https://wa.me/62895411239265">WhatsApp</a> |
-<a href="https://www.facebook.com/ikromw83">Facebook</a>
-</p>
+        <footer>© 2026 Ikrom Walidaini | Cyber Security</footer>
+    </div>
 
-<hr>
+    <!-- Kode Animasi Matrix -->
+    <script>
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=<>?/|{}[]';
+        chars = chars.split('');
+        let fontSize = 15;
+        let columns = canvas.width / fontSize;
+        let drops = [];
+        for(let x=0;x<columns;x++) drops[x] = 1;
 
-<p>© 2026 Ikrom Walidaini</p>
-
+        function draw(){
+            ctx.fillStyle = 'rgba(0,0,0,0.05)';
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            ctx.fillStyle = '#00ff41';
+            ctx.font = fontSize + 'px monospace';
+            for(let i=0;i<drops.length;i++){
+                let text = chars[Math.floor(Math.random()*chars.length)];
+                ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+                if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+                drops[i]++;
+            }
+        }
+        setInterval(draw,35);
+        window.addEventListener('resize',()=>{
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
-  </html>
+</html>
