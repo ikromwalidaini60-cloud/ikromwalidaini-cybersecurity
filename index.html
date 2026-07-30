@@ -65,7 +65,12 @@
         .card:hover{border-color:#00ff41;box-shadow:0 0 12px #00ff4140;transform:translateY(-5px);}
 
         footer{text-align:center;padding:25px;border-top:1px solid #00ff4130;margin-top:50px;opacity:0.7;}
-    </style>
+   /* Tambahan untuk tombol layanan yang bisa diklik */
+.card{cursor:pointer;position:relative;}
+.card .rincian{display:none;margin-top:12px;padding:10px;border-top:1px solid #00ff4130;color:#9aff9a;font-size:0.95em;}
+.card.aktif .rincian{display:block;}
+.ceklis{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:#00ff41;font-weight:bold;}
+ </style>
 </head>
 <body>
     <!-- Latar Animasi Matrix -->
