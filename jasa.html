@@ -5,86 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ikrom Walidaini — Jasa Pembuatan Website</title>
     <style>
-        * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Courier New', Courier, monospace;}
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color:#fff;
+            background:#050505;
+            color:#00ff41;
             text-align:center;
             padding:40px 20px;
             min-height:100vh;
+            background-image: 
+                linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+            background-size:25px 25px;
+            animation: matrixBg 20s linear infinite;
+        }
+        @keyframes matrixBg {
+            0% {background-position:0 0;}
+            100% {background-position:25px 25px;}
         }
         h1 {
-            font-size:2.2rem;
-            margin-bottom:10px;
-            text-shadow:0 0 15px #00ffcc;
+            font-size:2rem;
+            margin-bottom:5px;
+            color:#00ff41;
+            text-shadow:0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 40px #00ff41;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {text-shadow:0 0 10px #00ff41, 0 0 20px #00ff41;}
+            to {text-shadow:0 0 20px #00ff41, 0 0 40px #00ff41, 0 0 60px #00ff41;}
         }
         h2 {
-            font-size:1.2rem;
+            font-size:1rem;
             font-weight:normal;
-            color:#b2f2e4;
+            color:#00cc33;
             margin-bottom:30px;
+            opacity:0.8;
+        }
+        .cursor {
+            display:inline-block;
+            width:10px;
+            height:18px;
+            background:#00ff41;
+            margin-left:5px;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0%,100% {opacity:1;}
+            50% {opacity:0;}
         }
         .container {
             max-width:420px;
             margin:0 auto;
         }
         .card {
-            background:rgba(0,255,204,0.08);
-            border:1px solid #00ffcc;
-            border-radius:16px;
-            padding:25px 20px;
+            background:rgba(0,20,10,0.6);
+            border:1px solid #00ff41;
+            border-radius:6px;
+            padding:22px 18px;
             margin-bottom:20px;
-            box-shadow:0 0 20px rgba(0,255,204,0.15);
+            box-shadow:0 0 15px rgba(0,255,65,0.2), inset 0 0 10px rgba(0,255,65,0.05);
+            text-align:left;
         }
         .card h3 {
-            color:#00ffcc;
+            color:#00ff41;
             margin-bottom:15px;
-            font-size:1.1rem;
+            font-size:1.05rem;
+            border-bottom:1px solid rgba(0,255,65,0.2);
+            padding-bottom:8px;
         }
         .card p {
             line-height:1.7;
             font-size:0.95rem;
-            color:#e0fff8;
+            color:#99ffaa;
         }
         .check-item {
-            text-align:left;
             margin:10px 0;
-            padding-left:10px;
+            padding-left:5px;
+            color:#99ffaa;
         }
         .wa-btn {
             display:inline-block;
-            background:linear-gradient(90deg, #25d366, #128c7e);
-            color:#fff;
+            background:linear-gradient(90deg, #008822, #00ff41);
+            color:#000;
             font-weight:bold;
             text-decoration:none;
             padding:14px 28px;
-            border-radius:50px;
+            border-radius:4px;
             margin-top:10px;
-            font-size:1.05rem;
-            box-shadow:0 4px 15px rgba(37,211,102,0.3);
-            transition:transform 0.2s;
+            font-size:1rem;
+            border:1px solid #00ff41;
+            box-shadow:0 0 15px rgba(0,255,65,0.4);
+            transition:all 0.3s;
         }
-        .wa-btn:active {transform:scale(0.97);}
+        .wa-btn:active {transform:scale(0.97); box-shadow:0 0 25px rgba(0,255,65,0.6);}
         .footer {
             margin-top:30px;
-            font-size:0.9rem;
-            color:#88b4ac;
+            font-size:0.85rem;
+            color:#006622;
+        }
+        .terminal-bar {
+            background:#111;
+            border:1px solid #00ff41;
+            border-bottom:none;
+            border-radius:6px 6px 0 0;
+            padding:8px 12px;
+            text-align:left;
+            font-size:0.8rem;
+            color:#00ff41;
+        }
+        .terminal-body {
+            border-top:none;
+            border-radius:0 0 6px 6px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>🛡️ Ikrom Walidaini</h1>
-        <h2>Jasa Pembuatan Website Murah & Profesional</h2>
+        <h1>IKROM WALIDAINI</h1>
+        <h2>Jasa Pembuatan Website <span class="cursor"></span></h2>
 
-        <div class="card">
-            <h3>Punya Usaha? Ingin Terlihat Lebih Profesional?</h3>
-            <p>Saya siap bantu buatkan website impianmu! Tampilan rapi, elegan, dan nyaman dibuka di HP maupun komputer.</p>
+        <div class="terminal-bar">
+            ⚡ sistem — siap melayani permintaan
+        </div>
+        <div class="card terminal-body">
+            <h3>[1] PERTANYAAN</h3>
+            <p>Punya Usaha? Ingin Terlihat Lebih Profesional & Dikenal Banyak Orang?</p>
+            <p style="margin-top:8px;">Saya siap bantu buatkan website impianmu! Tampilan rapi, elegan, dan nyaman dibuka di HP maupun komputer.</p>
         </div>
 
-        <div class="card">
-            <h3>Apa yang Kamu Dapatkan?</h3>
+        <div class="terminal-bar">
+            ⚡ daftar_layanan --tampilkan
+        </div>
+        <div class="card terminal-body">
+            <h3>[2] FITUR YANG KAMU DAPATKAN</h3>
             <div class="check-item">✅ Bisa untuk Profil, Toko, Jasa, atau Bisnis</div>
             <div class="check-item">✅ Tampilan Modern & Bisa Disesuaikan</div>
             <div class="check-item">✅ Bisa Pasang Tombol WhatsApp & QRIS</div>
@@ -92,19 +145,23 @@
             <div class="check-item">✅ Gratis Panduan Cara Menggunakannya</div>
         </div>
 
-        <div class="card">
-            <h3>💡 Mulai Sekarang!</h3>
+        <div class="terminal-bar">
+            ⚡ saran --mulai-sekarang
+        </div>
+        <div class="card terminal-body">
+            <h3>[3] MULAI SEKARANG</h3>
             <p>Jangan biarkan bisnismu tertinggal zaman. Miliki website sendiri agar lebih dipercaya pelanggan dan mudah ditemukan orang di mana saja.</p>
             <p style="margin-top:10px;">Konsultasi & tanya-tanya dulu <strong>GRATIS!</strong></p>
         </div>
 
         <!-- Ganti nomor WA di bawah dengan nomor aslimu -->
-        <a href="https://wa.me/62895411239265" target="_blank" class="wa-btn">💬 Hubungi Saya via WhatsApp</a>
+        <a href="https://wa.me/62895411239265" target="_blank" class="wa-btn">💬 KONSULTASI GRATIS via WA</a>
 
         <div class="footer">
-            Yuk wujudkan website impianmu bersama saya! 🤝
+            $ ikromwalidaini --wujudkan_website_impianmu
         </div>
     </div>
 
 </body>
 </html>
+
