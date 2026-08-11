@@ -132,7 +132,40 @@
             <div class="cek">Bisa Disesuaikan Keinginan</div>
             <br>
             <em style="color:#00ff99;">💡 Bayar SEKALI SAJA, milikmu SELAMANYA! Tidak ada biaya bulanan!</em>
+              <!-- 📲 FORMULIR PESANAN OTOMATIS KE WHATSAPP -->
+        <div style="background:rgba(0,255,204,0.08); border:1px solid #00ffcc; border-radius:12px; padding:25px 20px; margin-top:30px;">
+            <h3 style="color:#00ffcc; text-align:center; margin-bottom:20px;">📲 PESAN LANGSUNG VIA WHATSAPP</h3>
+
+            <div style="margin-bottom:15px;">
+                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Nama Kamu:</label>
+                <input type="text" id="nama" placeholder="Tulis nama kamu di sini..." style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;">
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Nomor WhatsApp:</label>
+                <input type="tel" id="nomor" placeholder="Contoh: 081234567890" style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;">
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Jenis Pesanan:</label>
+                <select id="pesanan" style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;">
+                    <option value="Paket Dasar - Rp 50.000">🟢 Paket Dasar - Rp 50.000</option>
+                    <option value="Paket Lengkap - Rp 100.000">💎 Paket Lengkap - Rp 100.000</option>
+                    <option value="Konsultasi Dulu">💬 Konsultasi Dulu</option>
+                    <option value="Lainnya">📝 Lainnya</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom:20px;">
+                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Pesan / Permintaan Khusus:</label>
+                <textarea id="pesan" rows="4" placeholder="Ceritakan kebutuhan websitemu..." style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;"></textarea>
+            </div>
+
+            <button onclick="kirimKeWA()" style="width:100%; padding:14px; background:#00c853; color:#fff; font-weight:bold; font-size:1.1rem; border:none; border-radius:8px; cursor:pointer; box-shadow:0 0 10px rgba(0,200,83,0.3);">
+                ✅ KIRIM PESANAN KE WHATSAPP
+            </button>
         </div>
+  </div>
 
         <!-- KEUNGGULAN -->
         <div class="tombol-lipat" onclick="bukaTutup('unggul')">
@@ -191,8 +224,28 @@ function bukaTutup(id) {
   const box = document.getElementById(id);
   box.style.display = (box.style.display === 'block') ? 'none' : 'block';
 }
-</script>
 
+<script>
+function kirimKeWA() {
+  const nama = document.getElementById('nama').value;
+  const nomor = document.getElementById('nomor').value;
+  const pesanan = document.getElementById('pesanan').value;
+  const pesan = document.getElementById('pesan').value;
+
+  if(!nama || !nomor) {
+    alert('⚠️ Nama dan Nomor WhatsApp wajib diisi!');
+    return;
+  }
+
+  const teks = `Halo Ikrom! Saya ingin pesan pembuatan website.%0A%0ANama: ${nama}%0ANomor WA: ${nomor}%0AJenis Pesanan: ${pesanan}%0APesan: ${pesan}`;
+
+  // GANTI ANGKA INI DENGAN NOMOR WA-MU, AWALAN 62 BUKAN 0
+  const nomorTujuan = '62895411239265'; 
+
+  window.open(`https://wa.me/${nomorTujuan}?text=${teks}`);
+}
+</script>
+    
 </body>
 </html>
 
