@@ -1,8 +1,9 @@
         <!-- 📍 LOKASI LAYANAN -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('lokasi')">
-            ⚡ lokasi --info  ▼
-        </div>
-        <div class="card terminal-body" id="lokasi" style="display:block;">
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('lokasi'); ubahTandaPanah(this)">
+    <span class="panah">▼</span> 📍 Lokasi Layanan
+</div>
+<div class="card terminal-body" id="lokasi" style="display:block;">
+
             <p>📍 Berdomisili: <strong>Tegal, Jawa Tengah</strong></p>
             <p>🇮🇩 Melayani secara Online ke Seluruh Indonesia</p>
         </div>
@@ -81,5 +82,6 @@ function toggleBox(id) {
   box.style.display = (box.style.display === 'none') ? 'block' : 'none';
 }
 </script>
+
 
 
