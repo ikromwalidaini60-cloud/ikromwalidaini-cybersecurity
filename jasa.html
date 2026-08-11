@@ -1,105 +1,200 @@
-        <!-- 🌟 BAGIAN PROMOSI UTAMA -->
-        <div style="background:rgba(0,255,204,0.08); border:1px solid #00ffcc; border-radius:12px; padding:25px 20px; margin-bottom:30px; text-align:center;">
-            <h2 style="color:#00ffcc; font-size:1.4rem; margin-bottom:15px; line-height:1.5;">
-                Punya Usaha? Ingin Terlihat Lebih Profesional & Dikenal Banyak Orang?
-            </h2>
-            <h3 style="color:#00ff41; font-size:1.2rem; margin-bottom:20px;">
-                🛠️ Saya Siap Bantu Buatkan Website Impianmu!
-            </h3>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Murah — Ikrom Walidaini</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif;}
+        body {
+            background:#051916;
+            color:#00ffcc;
+            text-align:center;
+            padding:40px 20px;
+            min-height:100vh;
+            background-image: 
+                linear-gradient(rgba(0,255,204,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,255,204,0.03) 1px, transparent 1px);
+            background-size:25px 25px;
+        }
+        h1 {
+            font-size:2.2rem;
+            margin-bottom:10px;
+            text-shadow:0 0 15px #00ffcc;
+        }
+        .sub-judul {
+            font-size:1.1rem;
+            color:#80ffdd;
+            margin-bottom:30px;
+        }
+        .kotak-utama {
+            background:rgba(0,255,204,0.06);
+            border:2px solid #00ffcc;
+            border-radius:16px;
+            padding:30px 20px;
+            max-width:550px;
+            margin:0 auto 30px auto;
+            box-shadow:0 0 20px rgba(0,255,204,0.15);
+        }
+        .tombol-lipat {
+            background:rgba(0,40,30,0.6);
+            border:1px solid #00ffcc;
+            border-radius:10px;
+            padding:14px 18px;
+            margin:10px 0;
+            text-align:left;
+            cursor:pointer;
+            font-size:1rem;
+            color:#00ffcc;
+            transition:all 0.3s;
+        }
+        .tombol-lipat:hover {
+            background:rgba(0,255,204,0.12);
+        }
+        .isi-tombol {
+            background:rgba(0,30,25,0.4);
+            border:1px solid #006655;
+            border-top:none;
+            border-radius:0 0 10px 10px;
+            padding:18px;
+            margin:-10px 0 10px 0;
+            display:none;
+            text-align:left;
+            color:#b0ffeb;
+            line-height:1.7;
+        }
+        .cek {
+            margin:8px 0;
+        }
+        .cek::before {
+            content:"✅ ";
+        }
+        .tombol-wa {
+            display:inline-block;
+            background:#00c853;
+            color:#fff;
+            font-weight:bold;
+            text-decoration:none;
+            padding:14px 30px;
+            border-radius:50px;
+            margin-top:20px;
+            font-size:1.1rem;
+            box-shadow:0 4px 15px rgba(0,200,83,0.3);
+            transition:transform 0.2s;
+        }
+        .tombol-wa:hover {
+            transform:scale(1.05);
+        }
+        .garis-pemisah {
+            height:1px;
+            background:linear-gradient(to right, transparent, #00ffcc, transparent);
+            margin:25px 0;
+        }
+        .penutup {
+            margin-top:25px;
+            color:#66ffcc;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
 
-            <div style="text-align:left; max-width:500px; margin:0 auto 20px auto;">
-                <div class="check-item">✅ Bisa untuk Profil Diri, Toko Online, Jasa, atau Bisnis</div>
-                <div class="check-item">✅ Tampilan Modern, Keren, & Bisa Dibuka di HP maupun Komputer</div>
-                <div class="check-item">✅ Bisa Didesain Sesuai Keinginanmu (Warna, Tema, Tombol WA, dll)</div>
-                <div class="check-item">✅ Proses Mudah, Hasil Cepat, & Harga Bersahabat</div>
-            <p style="color:#00ffcc; font-weight:bold; margin-top:15px; line-height:1.8;">
-                👇 Ingin Tahu Harga & Mulai Buat Sekarang?<br>
-                📲 Klik tombol WhatsApp untuk konsultasi GRATIS!<br>
-                💬 Konsultasi ide & tanya-tanya dulu BOLEH KOK
+    <h1>🌐 BIKIN WEBSITE MURAH</h1>
+    <p class="sub-judul">Harga Sahabat, Hasil Luar Biasa!</p>
 
-<!-- 📍 LOKASI LAYANAN -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('lokasi'); ubahTandaPanah(this)">
-    <span class="panah">▼</span> 📍 Lokasi Layanan
-</div>
-<div class="card terminal-body" id="lokasi" style="display:block;">
+    <div class="kotak-utama">
+        <h2 style="color:#00ffdd; margin-bottom:20px;">Punya Usaha? Ingin Dikenal Lebih Banyak?</h2>
+        <p style="color:#ccfff5; line-height:1.7; margin-bottom:10px;">
+            Jangan biarkan bisnismu tertinggal zaman! Miliki website sendiri agar lebih dipercaya pelanggan dan mudah ditemukan orang di seluruh Indonesia.
+        </p>
 
-            <p>📍 Berdomisili: <strong>Tegal, Jawa Tengah</strong></p>
-            <p>🇮🇩 Melayani secara Online ke Seluruh Indonesia</p>
+        <div class="garis-pemisah"></div>
+
+        <!-- HARGA -->
+        <div class="tombol-lipat" onclick="bukaTutup('harga')">
+            ▶ 💰 Daftar Harga Terjangkau
         </div>
-
-                <!-- 💰 KISARAN HARGA -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('harga')">
-            ⚡ harga --daftar  ▼
-        </div>
-        <div class="card terminal-body" id="harga" style="display:block;">
-            <p><strong>💰 PAKET DASAR — Rp 50.000</strong></p>
-            <div class="check-item">✅ Foto Profil Pemilik</div>
-            <div class="check-item">✅ Tombol WhatsApp Langsung</div>
-            <div class="check-item">✅ Daftar Barang / Jasa yang Dijual</div>
-            <div class="check-item">✅ Lokasi & Jangkauan Layanan</div>
-            <div class="check-item">✅ Tampilan Rapi & Bisa dibuka di HP</div>
-            
-            <p style="margin-top:15px;"><strong>💎 PAKET LENGKAP — Rp 100.000</strong></p>
-            <div class="check-item">✅ Semua Fitur Paket Dasar</div>
-            <div class="check-item">✅ Tampilan Desain Lebih Keren & Unik</div>
-            <div class="check-item">✅ Pasang QRIS Pembayaran Langsung</div>
-            <div class="check-item">✅ Halaman Tambahan (Tentang & Kontak)</div>
-            <div class="check-item">✅ 🆓 Gratis Revisi Kecil setelah selesai</div>
-            <div class="check-item">✅ 🆓 Gratis Panduan Cara Menggunakannya</div>
-            <div class="check-item">✅ Bisa Disesuaikan Sesuai Keinginan</div>
-            
-            <p style="margin-top:12px; color:#00ff41;">💡 Bayar SEKALI SAJA, milikmu SELAMANYA! Tidak ada biaya bulanan!</p>
+        <div class="isi-tombol" id="harga">
+            <strong>🟢 PAKET DASAR — Rp 50.000</strong>
+            <div class="cek">Foto Profil & Info Pemilik</div>
+            <div class="cek">Tombol WhatsApp Langsung</div>
+            <div class="cek">Daftar Barang / Jasa</div>
+            <div class="cek">Lokasi & Jangkauan Layanan</div>
+            <div class="cek">Tampilan Rapi di HP</div>
+            <br>
+            <strong>💎 PAKET LENGKAP — Rp 100.000</strong>
+            <div class="cek">Semua Fitur Paket Dasar</div>
+            <div class="cek">Desain Lebih Keren & Unik</div>
+            <div class="cek">Pasang QRIS Pembayaran</div>
+            <div class="cek">Halaman Tambahan (Tentang & Kontak)</div>
+            <div class="cek">🆓 Gratis Revisi Kecil</div>
+            <div class="cek">🆓 Gratis Panduan Cara Pakai</div>
+            <div class="cek">Bisa Disesuaikan Keinginan</div>
+            <br>
+            <em style="color:#00ff99;">💡 Bayar SEKALI SAJA, milikmu SELAMANYA! Tidak ada biaya bulanan!</em>
         </div>
 
-        <!-- 📋 CARA KERJA -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('proses')">
-            ⚡ proses --langkah  ▼
+        <!-- KEUNGGULAN -->
+        <div class="tombol-lipat" onclick="bukaTutup('unggul')">
+            ▶ ✅ Kenapa Harus Di Sini?
         </div>
-        <div class="card terminal-body" id="proses" style="display:block;">
-            <div class="check-item">📌 Langkah 1 → Konsultasi kebutuhan & ide kamu</div>
-            <div class="check-item">📌 Langkah 2 → Saya buatkan desain & kode website</div>
-            <div class="check-item">📌 Langkah 3 → Revisi sampai sesuai keinginan</div>
-            <div class="check-item">📌 Langkah 4 → Website jadi + panduan cara pakai</div>
-        </div>
-
-        <!-- 🛡️ JAMINAN & GARANSI -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('jaminan')">
-            ⚡ jaminan --tampilkan  ▼
-        </div>
-        <div class="card terminal-body" id="jaminan" style="display:block;">
-            <div class="check-item">✅ Gratis revisi kecil setelah selesai</div>
-            <div class="check-item">✅ Gratis panduan cara menggunakannya</div>
-            <div class="check-item">✅ Siap bantu kalau ada kendala</div>
-            <div class="check-item">✅ Hasil rapi, aman, dan cepat</div>
+        <div class="isi-tombol" id="unggul">
+            <div class="cek">Harga Sangat Terjangkau</div>
+            <div class="cek">Tampilan Modern & Profesional</div>
+            <div class="cek">Bisa Dibuka di HP & Komputer</div>
+            <div class="cek">Desain Sesuai Keinginanmu</div>
+            <div class="cek">Proses Cepat & Mudah</div>
+            <div class="cek">Gratis Konsultasi Sepuasnya</div>
+            <div class="cek">Siap Bantu Kalau Ada Kendala</div>
         </div>
 
-        <!-- ❓ PERTANYAAN UMUM -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('faq')">
-            ⚡ faq --tanya  ▼
+        <!-- CARA PESAN -->
+        <div class="tombol-lipat" onclick="bukaTutup('cara')">
+            ▶ 📋 Cara Pesan
         </div>
-        <div class="card terminal-body" id="faq" style="display:block;">
-            <div class="check-item">⏳ Berapa lama selesainya? → Biasanya 1-3 hari</div>
-            <div class="check-item">✏️ Bisa diubah sendiri nanti? → Bisa, saya ajarkan!</div>
-            <div class="check-item">💳 Ada biaya bulanan? → TIDAK! Bayar sekali selesai!</div>
-            <div class="check-item">📱 Bisa dibuka di HP? → Bisa! Tampilannya rapi di HP & komputer</div>
+        <div class="isi-tombol" id="cara">
+            📌 Langkah 1 → Konsultasi kebutuhan & ide kamu<br>
+            📌 Langkah 2 → Saya buatkan desain & kode website<br>
+            📌 Langkah 3 → Revisi sampai sesuai keinginan<br>
+            📌 Langkah 4 → Website Jadi + panduan cara pakai<br>
+            <br>
+            <em style="color:#00ff99;">⏳ Biasanya selesai dalam 1-3 hari!</em>
         </div>
 
-        <!-- 📂 BUKTI KARYA -->
-        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('karya')">
-            ⚡ portofolio --lihat  ▼
+        <!-- JAMINAN -->
+        <div class="tombol-lipat" onclick="bukaTutup('jaminan')">
+            ▶ 🛡️ Jaminan & Garansi
         </div>
-        <div class="card terminal-body" id="karya" style="display:block;">
-            <p>Lihat sendiri hasil karya yang sudah saya buat:</p>
-            <div class="check-item">🔒 Website Profil Cyber Security — tampilan profesional</div>
-            <div class="check-item">💻 Halaman Jasa Pembuatan Website — tampilan keren seperti ini!</div>
-            <p style="margin-top:10px; color:#00ff41;">👉 Buktinya sudah ada di depan matamu! Saya siap buatkan untukmu juga!</p>
+        <div class="isi-tombol" id="jaminan">
+            <div class="cek">Gratis revisi kecil setelah selesai</div>
+            <div class="cek">Gratis panduan cara menggunakannya</div>
+            <div class="cek">Siap bantu kalau ada kendala</div>
+            <div class="cek">Hasil rapi, aman, dan cepat</div>
         </div>
+
+        <div class="garis-pemisah"></div>
+
+        <p style="color:#99ffdd; font-weight:bold; font-size:1.05rem; margin-top:10px;">
+            💬 Konsultasi ide & tanya-tanya dulu BOLEH KOK, GRATIS!<br>
+            Yuk wujudkan website impianmu bersama saya!
+        </p>
+
+        <a href="https://wa.me/62895411239265?text=Halo%20Ikrom%2C%20saya%20ingin%20pesan%20pembuatan%20website" target="_blank" class="tombol-wa">
+            💬 Klik Konsultasi GRATIS
+        </a>
+
+        <p class="penutup">— Ikrom Walidaini — Pembuatan Website Murah & Berkualitas</p>
+    </div>
+
 <script>
-function toggleBox(id) {
+function bukaTutup(id) {
   const box = document.getElementById(id);
-  box.style.display = (box.style.display === 'none') ? 'block' : 'none';
+  box.style.display = (box.style.display === 'block') ? 'none' : 'block';
 }
 </script>
+
+</body>
+</html>
 
 
 
