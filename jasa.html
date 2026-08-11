@@ -1,171 +1,79 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikrom Walidaini — Jasa Pembuatan Website</title>
-    <style>
-        * {margin:0; padding:0; box-sizing:border-box; font-family:'Courier New', Courier, monospace;}
-        body {
-            background:#050505;
-            color:#00ff41;
-            text-align:center;
-            padding:40px 20px;
-            min-height:100vh;
-            background-image: 
-                linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
-            background-size:25px 25px;
-            animation: matrixBg 20s linear infinite;
-        }
-        @keyframes matrixBg {
-            0% {background-position:0 0;}
-            100% {background-position:25px 25px;}
-        }
-        h1 {
-            font-size:2rem;
-            margin-bottom:5px;
-            color:#00ff41;
-            text-shadow:0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 40px #00ff41;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        @keyframes glow {
-            from {text-shadow:0 0 10px #00ff41, 0 0 20px #00ff41;}
-            to {text-shadow:0 0 20px #00ff41, 0 0 40px #00ff41, 0 0 60px #00ff41;}
-        }
-        h2 {
-            font-size:1rem;
-            font-weight:normal;
-            color:#00cc33;
-            margin-bottom:30px;
-            opacity:0.8;
-        }
-        .cursor {
-            display:inline-block;
-            width:10px;
-            height:18px;
-            background:#00ff41;
-            margin-left:5px;
-            animation: blink 0.8s infinite;
-        }
-        @keyframes blink {
-            0%,100% {opacity:1;}
-            50% {opacity:0;}
-        }
-        .container {
-            max-width:420px;
-            margin:0 auto;
-        }
-        .card {
-            background:rgba(0,20,10,0.6);
-            border:1px solid #00ff41;
-            border-radius:6px;
-            padding:22px 18px;
-            margin-bottom:20px;
-            box-shadow:0 0 15px rgba(0,255,65,0.2), inset 0 0 10px rgba(0,255,65,0.05);
-            text-align:left;
-        }
-        .card h3 {
-            color:#00ff41;
-            margin-bottom:15px;
-            font-size:1.05rem;
-            border-bottom:1px solid rgba(0,255,65,0.2);
-            padding-bottom:8px;
-        }
-        .card p {
-            line-height:1.7;
-            font-size:0.95rem;
-            color:#99ffaa;
-        }
-        .check-item {
-            margin:10px 0;
-            padding-left:5px;
-            color:#99ffaa;
-        }
-        .wa-btn {
-            display:inline-block;
-            background:linear-gradient(90deg, #008822, #00ff41);
-            color:#000;
-            font-weight:bold;
-            text-decoration:none;
-            padding:14px 28px;
-            border-radius:4px;
-            margin-top:10px;
-            font-size:1rem;
-            border:1px solid #00ff41;
-            box-shadow:0 0 15px rgba(0,255,65,0.4);
-            transition:all 0.3s;
-        }
-        .wa-btn:active {transform:scale(0.97); box-shadow:0 0 25px rgba(0,255,65,0.6);}
-        .footer {
-            margin-top:30px;
-            font-size:0.85rem;
-            color:#006622;
-        }
-        .terminal-bar {
-            background:#111;
-            border:1px solid #00ff41;
-            border-bottom:none;
-            border-radius:6px 6px 0 0;
-            padding:8px 12px;
-            text-align:left;
-            font-size:0.8rem;
-            color:#00ff41;
-        }
-        .terminal-body {
-            border-top:none;
-            border-radius:0 0 6px 6px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>IKROM WALIDAINI</h1>
-        <h2>Jasa Pembuatan Website <span class="cursor"></span></h2>
-<!-- FOTO PROFIL -->
-<div style="text-align:center; margin:25px 0;">
-    <img src="profil.png" alt="Ikrom Walidaini" style="width:140px; height:140px; border-radius:50%; border:3px solid #00ff41; box-shadow:0 0 20px #00ff41;">
-</div>
-
-        <div class="terminal-bar">
-            ⚡ sistem — siap melayani permintaan
+        <!-- 📍 LOKASI LAYANAN -->
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('lokasi')">
+            ⚡ lokasi --info  ▼
         </div>
-        <div class="card terminal-body">
-            <h3>[1] PERTANYAAN</h3>
-            <p>Punya Usaha? Ingin Terlihat Lebih Profesional & Dikenal Banyak Orang?</p>
-            <p style="margin-top:8px;">Saya siap bantu buatkan website impianmu! Tampilan rapi, elegan, dan nyaman dibuka di HP maupun komputer.</p>
+        <div class="card terminal-body" id="lokasi" style="display:block;">
+            <p>📍 Berdomisili: <strong>Tegal, Jawa Tengah</strong></p>
+            <p>🇮🇩 Melayani secara Online ke Seluruh Indonesia</p>
         </div>
 
-        <div class="terminal-bar">
-            ⚡ daftar_layanan --tampilkan
+                <!-- 💰 KISARAN HARGA -->
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('harga')">
+            ⚡ harga --daftar  ▼
         </div>
-        <div class="card terminal-body">
-            <h3>[2] FITUR YANG KAMU DAPATKAN</h3>
-            <div class="check-item">✅ Bisa untuk Profil, Toko, Jasa, atau Bisnis</div>
-            <div class="check-item">✅ Tampilan Modern & Bisa Disesuaikan</div>
-            <div class="check-item">✅ Bisa Pasang Tombol WhatsApp & QRIS</div>
-            <div class="check-item">✅ Proses Mudah & Harga Terjangkau</div>
-            <div class="check-item">✅ Gratis Panduan Cara Menggunakannya</div>
+        <div class="card terminal-body" id="harga" style="display:block;">
+            <p><strong>💰 PAKET DASAR — Rp 50.000</strong></p>
+            <div class="check-item">✅ Foto Profil Pemilik</div>
+            <div class="check-item">✅ Tombol WhatsApp Langsung</div>
+            <div class="check-item">✅ Daftar Barang / Jasa yang Dijual</div>
+            <div class="check-item">✅ Lokasi & Jangkauan Layanan</div>
+            <div class="check-item">✅ Tampilan Rapi & Bisa dibuka di HP</div>
+            
+            <p style="margin-top:15px;"><strong>💎 PAKET LENGKAP — Rp 100.000</strong></p>
+            <div class="check-item">✅ Semua Fitur Paket Dasar</div>
+            <div class="check-item">✅ Tampilan Desain Lebih Keren & Unik</div>
+            <div class="check-item">✅ Pasang QRIS Pembayaran Langsung</div>
+            <div class="check-item">✅ Halaman Tambahan (Tentang & Kontak)</div>
+            <div class="check-item">✅ 🆓 Gratis Revisi Kecil setelah selesai</div>
+            <div class="check-item">✅ 🆓 Gratis Panduan Cara Menggunakannya</div>
+            <div class="check-item">✅ Bisa Disesuaikan Sesuai Keinginan</div>
+            
+            <p style="margin-top:12px; color:#00ff41;">💡 Bayar SEKALI SAJA, milikmu SELAMANYA! Tidak ada biaya bulanan!</p>
         </div>
 
-        <div class="terminal-bar">
-            ⚡ saran --mulai-sekarang
+
+        <!-- 📋 CARA KERJA -->
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('proses')">
+            ⚡ proses --langkah  ▼
         </div>
-        <div class="card terminal-body">
-            <h3>[3] MULAI SEKARANG</h3>
-            <p>Jangan biarkan bisnismu tertinggal zaman. Miliki website sendiri agar lebih dipercaya pelanggan dan mudah ditemukan orang di mana saja.</p>
-            <p style="margin-top:10px;">Konsultasi & tanya-tanya dulu <strong>GRATIS!</strong></p>
+        <div class="card terminal-body" id="proses" style="display:block;">
+            <div class="check-item">📌 Langkah 1 → Konsultasi kebutuhan & ide kamu</div>
+            <div class="check-item">📌 Langkah 2 → Saya buatkan desain & kode website</div>
+            <div class="check-item">📌 Langkah 3 → Revisi sampai sesuai keinginan</div>
+            <div class="check-item">📌 Langkah 4 → Website jadi + panduan cara pakai</div>
         </div>
 
-        <!-- Ganti nomor WA di bawah dengan nomor aslimu -->
-        <a href="https://wa.me/62895411239265" target="_blank" class="wa-btn">💬 KONSULTASI GRATIS via WA</a>
-
-        <div class="footer">
-            $ ikromwalidaini --wujudkan_website_impianmu
+        <!-- 🛡️ JAMINAN & GARANSI -->
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('jaminan')">
+            ⚡ jaminan --tampilkan  ▼
         </div>
-    </div>
+        <div class="card terminal-body" id="jaminan" style="display:block;">
+            <div class="check-item">✅ Gratis revisi kecil setelah selesai</div>
+            <div class="check-item">✅ Gratis panduan cara menggunakannya</div>
+            <div class="check-item">✅ Siap bantu kalau ada kendala</div>
+            <div class="check-item">✅ Hasil rapi, aman, dan cepat</div>
+        </div>
 
-</body>
-</html>
+        <!-- ❓ PERTANYAAN UMUM -->
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('faq')">
+            ⚡ faq --tanya  ▼
+        </div>
+        <div class="card terminal-body" id="faq" style="display:block;">
+            <div class="check-item">⏳ Berapa lama selesainya? → Biasanya 1-3 hari</div>
+            <div class="check-item">✏️ Bisa diubah sendiri nanti? → Bisa, saya ajarkan!</div>
+            <div class="check-item">💳 Ada biaya bulanan? → TIDAK! Bayar sekali selesai!</div>
+            <div class="check-item">📱 Bisa dibuka di HP? → Bisa! Tampilannya rapi di HP & komputer</div>
+        </div>
+
+        <!-- 📂 BUKTI KARYA -->
+        <div class="terminal-bar" style="cursor:pointer;" onclick="toggleBox('karya')">
+            ⚡ portofolio --lihat  ▼
+        </div>
+        <div class="card terminal-body" id="karya" style="display:block;">
+            <p>Lihat sendiri hasil karya yang sudah saya buat:</p>
+            <div class="check-item">🔒 Website Profil Cyber Security — tampilan profesional</div>
+            <div class="check-item">💻 Halaman Jasa Pembuatan Website — tampilan keren seperti ini!</div>
+            <p style="margin-top:10px; color:#00ff41;">👉 Buktinya sudah ada di depan matamu! Saya siap buatkan untukmu juga!</p>
+        </div>
+
 
