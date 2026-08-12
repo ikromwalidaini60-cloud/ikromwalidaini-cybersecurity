@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ikromwalidaini - Situs Resmi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .kotak-besar {
+            display: flex;
+            width: 800px;
+            max-width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Bagian Kiri - Selamat Datang */
+        .bagian-selamat {
+            width: 50%;
+            background: linear-gradient(135deg, #000000, #333333);
+            color: white;
+            padding: 60px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bagian-selamat h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .bagian-selamat p {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        /* Bagian Kanan - Form Daftar */
+        .bagian-form {
+            width: 50%;
+            background-color: white;
+            padding: 60px 30px;
+        }
+
+        .bagian-form h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        .bagian-form input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .tombol-daftar {
+            width: 100%;
+            padding: 13px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 0 20px;
+        }
+
+        .tombol-daftar:hover {
+            background-color: #333;
+        }
+
+        .teks-masuk {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .teks-masuk a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Sesuai nama situs */
+        .nama-situs {
+            margin-top: 20px;
+            padding: 12px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #111;
+        }
+
+        /* Agar rapi di HP */
+        @media (max-width: 650px) {
+            .kotak-besar {
+                flex-direction: column;
+            }
+            .bagian-selamat, .bagian-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kotak-besar">
+        <!-- Bagian Kiri -->
+        <div class="bagian-selamat">
+            <h1>Selamat Datang!</h1>
+            <p>Silakan isi data diri untuk membuat akun baru dan bergabung bersama kami.</p>
+            
+            <div class="nama-situs">
+                situs website resmi<br>
+                ikromwalidaini
+            </div>
+        </div>
+
+        <!-- Bagian Kanan -->
+        <div class="bagian-form">
+            <h2>Daftar Akun</h2>
+            
+            <form>
+                <input type="text" placeholder="Nama Pengguna" required>
+                <input type="email" placeholder="Alamat Email" required>
+                <input type="password" placeholder="Kata Sandi" required>
+
+                <button class="tombol-daftar">Daftar Sekarang</button>
+
+                <p class="teks-masuk">Sudah punya akun? <a href="#">Masuk di sini</a></p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
