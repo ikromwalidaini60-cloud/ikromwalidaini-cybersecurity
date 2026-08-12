@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login & Daftar — Ikrom Walidaini</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f2f5;
+        }
+        .container {
+            position: relative;
+            width: 750px;
+            height: 400px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        .bagian-kiri {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            transition: transform 0.5s ease-in-out;
+            z-index: 2;
+        }
+        .bagian-kiri h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .bagian-kiri p {
+            line-height: 1.6;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        .container.active .bagian-kiri {
+            transform: translateX(100%);
+        }
+        .bagian-kanan {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: transform 0.5s ease-in-out;
+        }
+        .container.active .bagian-kanan {
+            transform: translateX(-100%);
+        }
+        .form-daftar, .form-masuk {
+            transition: opacity 0.3s ease;
+        }
+        .form-masuk {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .container.active .form-daftar {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .container.active .form-masuk {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #111;
+        }
+        .kotak-input {
+            position: relative;
+            margin-bottom: 18px;
+        }
+        .kotak-input input {
+            width: 100%;
+            padding: 12px 12px 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+        .kotak-input input:focus {
+            border-color: #333;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #333;
+        }
+        .teks-pindah {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .teks-pindah span {
+            color: #111;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- BAGIAN HITAM DI KIRI -->
+        <div class="bagian-kiri">
+            <h2 id="judul-samping">Selamat Datang di Situs Website Resmi Ikrom Walidaini</h2>
+            <p id="teks-samping">Silakan isi data diri untuk membuat akun baru dan bergabung bersama kami.</p>
+        </div>
+
+        <!-- BAGIAN PUTIH DI KANAN -->
+        <div class="bagian-kanan">
+            <!-- FORM DAFTAR -->
+            <div class="form-daftar">
+                <h3>Daftar Akun</h3>
+                <div class="kotak-input">
+                    <input type="text" placeholder="Nama Pengguna">
+                </div>
+                <div class="kotak-input">
+                    <input type="email" placeholder="Alamat Email">
+                </div>
+                <div class="kotak-input">
+                    <input type="password" placeholder="Kata Sandi">
+                </div>
+                <button>Daftar Sekarang</button>
+                <p class="teks-pindah">Sudah punya akun? <span id="ke-masuk">Masuk di sini</span></p>
+            </div>
+
+            <!-- FORM MASUK -->
+            <div class="form-masuk">
+                <h3>Masuk Akun</h3>
+                <div class="kotak-input">
+                    <input type="text" placeholder="Nama Pengguna / Email">
+                </div>
+                <div class="kotak-input">
+                    <input type="password" placeholder="Kata Sandi">
+                </div>
+                <button>Masuk</button>
+                <p class="teks-pindah">Belum punya akun? <span id="ke-daftar">Daftar di sini</span></p>
+            </div>
+        </div>
+    </div>
+
+<script>
+const wadah = document.querySelector('.container');
+const judulSamping = document.getElementById('judul-samping');
+const teksSamping = document.getElementById('teks-samping');
+const keMasuk = document.getElementById('ke-masuk');
+const keDaftar = document.getElementById('ke-daftar');
+
+// KE FORM MASUK
+keMasuk.addEventListener('click', () => {
+    wadah.classList.add('active');
+    judulSamping.textContent = 'Selamat Datang Kembali, Ikrom Walidaini!';
+    teksSamping.textContent = 'Silakan masuk untuk melanjutkan ke akunmu.';
+});
+
+// KE FORM DAFTAR
+keDaftar.addEventListener('click', () => {
+    wadah.classList.remove('active');
+    judulSamping.textContent = 'Selamat Datang di Situs Website Resmi Ikrom Walidaini';
+    teksSamping.textContent = 'Silakan isi data diri untuk membuat akun baru dan bergabung bersama kami.';
+});
+</script>
+
+</body>
+</html>
