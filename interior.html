@@ -97,8 +97,19 @@
             box-shadow: 0 5px 18px rgba(212, 175, 55, 0.15);
             border: 2px solid #f5e4b7;
         }
-        .contact-box p {margin: 10px 0; font-size: 1.05rem;}
-        .contact-box a {color: #b8860b; font-weight: 500; text-decoration: none;}
+        .wa-link {
+            display:block; 
+            background: linear-gradient(90deg, #25D366, #128C7E); 
+            color:#fff; 
+            padding:12px 20px; 
+            border-radius:10px; 
+            text-decoration:none; 
+            font-weight:bold; 
+            margin-bottom:10px; 
+            text-align:center;
+            transition: transform 0.2s;
+        }
+        .wa-link:hover {transform: scale(1.02);}
 
         footer {
             background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
@@ -207,20 +218,20 @@ function toggleLayanan(id) {
 </section>
 
 <!-- ===================================== -->
-<!-- KONTAK -->
+<!-- KONTAK — 3 TOMBOL WHATSAPP -->
 <!-- ===================================== -->
 <section id="kontak">
     <h2>📞 Hubungi Kami</h2>
     <div class="contact-box">
-        <p><strong>📲 WhatsApp:</strong></p>
-        <p>👉 <a href="https://wa.me/6282171689496">0821-7168-9496 (Iqbal)</a></p>
-        <p>👉 <a href="https://wa.me/6285210225089">+62 852-1022-5089 (Pitra)</a></p>
-        <p>👉 <a href="https://wa.me/628111322121">+62 811-1322-121 (Rangga)</a></p>
+        <p style="font-size: 1.1rem; margin-bottom: 18px;"><strong>📲 Klik untuk Konsultasi Langsung:</strong></p>
+
+        <a href="https://wa.me/6282171689496" class="wa-link">💬 0821-7168-9496 — Iqbal</a>
+        <a href="https://wa.me/6285210225089" class="wa-link">💬 +62 852-1022-5089 — Pitra</a>
+        <a href="https://wa.me/628111322121" class="wa-link">💬 +62 811-1322-121 — Rangga</a>
+
         <br>
         <p><strong>📍 Alamat:</strong> Pamulang, Tangerang Selatan</p>
         <p><strong>🌐 Wilayah:</strong> Jabodetabek & Pekanbaru</p>
-        <br>
-        <a href="https://wa.me/6282171689496" class="wa-btn">💬 Klik untuk Konsultasi Gratis</a>
     </div>
 </section>
 
@@ -234,3 +245,4 @@ function toggleLayanan(id) {
 
 </body>
 </html>
+
