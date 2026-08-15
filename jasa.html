@@ -3,246 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Pembuatan Website Murah — Ikrom Walidaini</title>
+    <title>Jasa Pembuatan Website — Ikrom Walidaini</title>
     <style>
-        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif;}
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Arial, sans-serif;}
         body {
-            background:#051916;
-            color:#00ffcc;
-            text-align:center;
-            padding:40px 20px;
-            min-height:100vh;
-            background-image: 
-                linear-gradient(rgba(0,255,204,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,255,204,0.03) 1px, transparent 1px);
-            background-size:25px 25px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
         }
-        h1 {
-            font-size:2.2rem;
-            margin-bottom:10px;
-            text-shadow:0 0 15px #00ffcc;
+        .container {max-width: 800px; margin: 0 auto;}
+        
+        /* ===== HEADER ===== */
+        header {text-align: center; padding: 40px 20px;}
+        h1 {font-size: 2.2rem; color: #22d3ee; margin-bottom: 10px;}
+        .subtitle {color: #94a3b8; font-size: 1.1rem;}
+        .terminal-bar {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #22d3ee;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s;
         }
-        .sub-judul {
-            font-size:1.1rem;
-            color:#80ffdd;
-            margin-bottom:30px;
+        .terminal-bar:hover {background: #334155;}
+        .terminal-body {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-top: none;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            margin-top: -1px;
+            display: none;
         }
-        .kotak-utama {
-            background:rgba(0,255,204,0.06);
-            border:2px solid #00ffcc;
-            border-radius:16px;
-            padding:30px 20px;
-            max-width:550px;
-            margin:0 auto 30px auto;
-            box-shadow:0 0 20px rgba(0,255,204,0.15);
+        
+        /* ===== KARTU & FITUR ===== */
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid #334155;
+            transition: transform 0.3s;
         }
-        .tombol-lipat {
-            background:rgba(0,40,30,0.6);
-            border:1px solid #00ffcc;
-            border-radius:10px;
-            padding:14px 18px;
-            margin:10px 0;
-            text-align:left;
-            cursor:pointer;
-            font-size:1rem;
-            color:#00ffcc;
-            transition:all 0.3s;
+        .card:hover {transform: translateY(-3px); border-color: #22d3ee;}
+        h2 {font-size: 1.5rem; color: #22d3ee; margin-bottom: 20px;}
+        .check-item {margin: 10px 0; padding-left: 5px;}
+        
+        /* ===== TOMBOL UTAMA ===== */
+        .btn-wa {
+            display: block;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            padding: 18px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 30px 0;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+            transition: all 0.3s;
         }
-        .tombol-lipat:hover {
-            background:rgba(0,255,204,0.12);
+        .btn-wa:hover {transform: translateY(-3px);}
+        
+        /* ===== FORMULIR PESANAN ===== */
+        .form-box {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #334155;
         }
-        .isi-tombol {
-            background:rgba(0,30,25,0.4);
-            border:1px solid #006655;
-            border-top:none;
-            border-radius:0 0 10px 10px;
-            padding:18px;
-            margin:-10px 0 10px 0;
-            display:none;
-            text-align:left;
-            color:#b0ffeb;
-            line-height:1.7;
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            background: #0f172a;
+            color: white;
+            font-size: 1rem;
         }
-        .cek {
-            margin:8px 0;
+        input:focus, textarea:focus {outline: none; border-color: #22d3ee;}
+        button {
+            background: #22d3ee;
+            color: #0f172a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
         }
-        .cek::before {
-            content:"✅ ";
-        }
-        .tombol-wa {
-            display:inline-block;
-            background:#00c853;
-            color:#fff;
-            font-weight:bold;
-            text-decoration:none;
-            padding:14px 30px;
-            border-radius:50px;
-            margin-top:20px;
-            font-size:1.1rem;
-            box-shadow:0 4px 15px rgba(0,200,83,0.3);
-            transition:transform 0.2s;
-        }
-        .tombol-wa:hover {
-            transform:scale(1.05);
-        }
-        .garis-pemisah {
-            height:1px;
-            background:linear-gradient(to right, transparent, #00ffcc, transparent);
-            margin:25px 0;
-        }
-        .penutup {
-            margin-top:25px;
-            color:#66ffcc;
-            font-style:italic;
-        }
+        button:hover {background: #06b6d4;}
+        
+        /* ===== FOOTER ===== */
+        footer {text-align: center; margin-top: 50px; padding: 20px; color: #64748b; font-size: 0.9rem;}
     </style>
 </head>
 <body>
 
-    <h1>🌐 BIKIN WEBSITE MURAH</h1>
-    <p class="sub-judul">Harga Sahabat, Hasil Luar Biasa!</p>
+<div class="container">
 
-    <div class="kotak-utama">
-        <h2 style="color:#00ffdd; margin-bottom:20px;">Punya Usaha? Ingin Dikenal Lebih Banyak?</h2>
-        <p style="color:#ccfff5; line-height:1.7; margin-bottom:10px;">
-            Jangan biarkan bisnismu tertinggal zaman! Miliki website sendiri agar lebih dipercaya pelanggan dan mudah ditemukan orang di seluruh Indonesia.
-        </p>
-
-        <div class="garis-pemisah"></div>
-
-        <!-- HARGA -->
-        <div class="tombol-lipat" onclick="bukaTutup('harga')">
-            ▶ 💰 Daftar Harga Terjangkau
-        </div>
-        <div class="isi-tombol" id="harga">
-            <strong>🟢 PAKET DASAR — Rp 50.000</strong>
-            <div class="cek">Foto Profil & Info Pemilik</div>
-            <div class="cek">Tombol WhatsApp Langsung</div>
-            <div class="cek">Daftar Barang / Jasa</div>
-            <div class="cek">Lokasi & Jangkauan Layanan</div>
-            <div class="cek">Tampilan Rapi di HP</div>
-            <br>
-            <strong>💎 PAKET LENGKAP — Rp 100.000</strong>
-            <div class="cek">Semua Fitur Paket Dasar</div>
-            <div class="cek">Desain Lebih Keren & Unik</div>
-            <div class="cek">Pasang QRIS Pembayaran</div>
-            <div class="cek">Halaman Tambahan (Tentang & Kontak)</div>
-            <div class="cek">🆓 Gratis Revisi Kecil</div>
-            <div class="cek">🆓 Gratis Panduan Cara Pakai</div>
-            <div class="cek">Bisa Disesuaikan Keinginan</div>
-            <br>
-            <em style="color:#00ff99;">💡 Bayar SEKALI SAJA, milikmu SELAMANYA! Tidak ada biaya bulanan!</em>
-        </div>
-
-        <!-- KEUNGGULAN -->
-        <div class="tombol-lipat" onclick="bukaTutup('unggul')">
-            ▶ ✅ Kenapa Harus Di Sini?
-        </div>
-        <div class="isi-tombol" id="unggul">
-            <div class="cek">Harga Sangat Terjangkau</div>
-            <div class="cek">Tampilan Modern & Profesional</div>
-            <div class="cek">Bisa Dibuka di HP & Komputer</div>
-            <div class="cek">Desain Sesuai Keinginanmu</div>
-            <div class="cek">Proses Cepat & Mudah</div>
-            <div class="cek">Gratis Konsultasi Sepuasnya</div>
-            <div class="cek">Siap Bantu Kalau Ada Kendala</div>
-        </div>
-
-        <!-- CARA PESAN -->
-        <div class="tombol-lipat" onclick="bukaTutup('cara')">
-            ▶ 📋 Cara Pesan
-        </div>
-        <div class="isi-tombol" id="cara">
-            📌 Langkah 1 → Konsultasi kebutuhan & ide kamu<br>
-            📌 Langkah 2 → Saya buatkan desain & kode website<br>
-            📌 Langkah 3 → Revisi sampai sesuai keinginan<br>
-            📌 Langkah 4 → Website Jadi + panduan cara pakai<br>
-            <br>
-            <em style="color:#00ff99;">⏳ Biasanya selesai dalam 1-3 hari!</em>
-        </div>
-
-        <!-- JAMINAN -->
-        <div class="tombol-lipat" onclick="bukaTutup('jaminan')">
-            ▶ 🛡️ Jaminan & Garansi
-        </div>
-        <div class="isi-tombol" id="jaminan">
-            <div class="cek">Gratis revisi kecil setelah selesai</div>
-            <div class="cek">Gratis panduan cara menggunakannya</div>
-            <div class="cek">Siap bantu kalau ada kendala</div>
-            <div class="cek">Hasil rapi, aman, dan cepat</div>
-        </div>
-
-        <!-- 📲 FORMULIR PESANAN -->
-        <div style="background:rgba(0,255,204,0.08); border:1px solid #00ffcc; border-radius:12px; padding:25px 20px; margin-top:30px;">
-            <h3 style="color:#00ffcc; text-align:center; margin-bottom:20px;">📲 PESAN LANGSUNG VIA WHATSAPP</h3>
-
-            <div style="margin-bottom:15px;">
-                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Nama Kamu:</label>
-                <input type="text" id="nama" placeholder="Tulis nama kamu di sini..." style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;">
-            </div>
-
-            <div style="margin-bottom:15px;">
-                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Nomor WhatsApp:</label>
-                <input type="tel" id="nomor" placeholder="Contoh: 081234567890" style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;">
-            </div>
-
-            <div style="margin-bottom:15px;">
-                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Jenis Pesanan:</label>
-                <select id="pesanan" style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;">
-                    <option value="Paket Dasar - Rp 50.000">🟢 Paket Dasar - Rp 50.000</option>
-                    <option value="Paket Lengkap - Rp 100.000">💎 Paket Lengkap - Rp 100.000</option>
-                    <option value="Konsultasi Dulu">💬 Konsultasi Dulu</option>
-                    <option value="Lainnya">📝 Lainnya</option>
-                </select>
-            </div>
-
-            <div style="margin-bottom:20px;">
-                <label style="color:#ccfff5; display:block; margin-bottom:5px;">Pesan / Permintaan Khusus:</label>
-                <textarea id="pesan" rows="4" placeholder="Ceritakan kebutuhan websitemu..." style="width:100%; padding:10px; border:1px solid #006655; border-radius:8px; background:rgba(0,40,30,0.5); color:#fff; font-size:1rem;"></textarea>
-            </div>
-
-            <button onclick="kirimKeWA()" style="width:100%; padding:14px; background:#00c853; color:#fff; font-weight:bold; font-size:1.1rem; border:none; border-radius:8px; cursor:pointer; box-shadow:0 0 10px rgba(0,200,83,0.3);">
-                ✅ KIRIM PESANAN KE WHATSAPP
-            </button>
-        </div>
-
-        <div class="garis-pemisah"></div>
-
-        <p style="color:#99ffdd; font-weight:bold; font-size:1.05rem; margin-top:10px;">
-            💬 Konsultasi ide & tanya-tanya dulu BOLEH KOK, GRATIS!<br>
-            Yuk wujudkan website impianmu bersama saya!
-        </p>
-
-        <a href="https://wa.me/62895411239265?text=Halo%20Ikrom%2C%20saya%20ingin%20pesan%20pembuatan%20website" target="_blank" class="tombol-wa">
-            💬 Klik Konsultasi GRATIS
-        </a>
-
-        <p class="penutup">— Ikrom Walidaini — Pembuatan Website Murah & Berkualitas</p>
+<!-- ===================================== -->
+<!-- HEADER -->
+<!-- ===================================== -->
+<header>
+    <h1>⚡ IKROM WALIDAINI</h1>
+    <p class="subtitle">Jasa Pembuatan Website — Profesional & Terjangkau</p>
+    <div class="terminal-bar" onclick="toggleBox('status')">
+        ⚡ sistem — siap melayani permintaan ▼
     </div>
+    <div class="terminal-body" id="status">
+        <p>✅ Platform: GitHub, Vercel, Netlify, Cloudflare Pages + Blogger</p>
+        <p>✅ Status: Online & Siap Menerima Pesanan</p>
+        <p>✅ Garansi: Revisi Gratis + Panduan Penggunaan</p>
+    </div>
+</header>
 
+<!-- ===================================== -->
+<!-- PERTANYAAN UTAMA -->
+<!-- ===================================== -->
+<div class="card">
+    <h2>[1] Punya Usaha? Ingin Terlihat Lebih Profesional?</h2>
+    <p>Saya siap bantu buatkan website impianmu! Tampilan rapi, elegan, dan nyaman dibuka di HP maupun komputer.</p>
+    <p style="margin-top: 10px;">🚀 <strong>Bisa untuk Profil Usaha, Toko Online, Jasa, & Lainnya</strong></p>
+</div>
+
+<!-- ===================================== -->
+<!-- DAFTAR LAYANAN — BISA DILIPAT! -->
+<!-- ===================================== -->
+<div class="terminal-bar" onclick="toggleBox('layanan')">
+    ⚡ daftar_layanan --tampilkan ▼
+</div>
+<div class="card terminal-body" id="layanan">
+    <h3 style="color:#22d3ee; margin-bottom:15px;">📋 Pilihan Paket & Fitur</h3>
+    
+    <p><strong>💰 PAKET DASAR — Rp 50.000</strong></p>
+    <div class="check-item">✅ Tampilan Profil Usaha</div>
+    <div class="check-item">✅ Tombol WhatsApp Langsung</div>
+    <div class="check-item">✅ Tampilan Rapi di HP & Komputer</div>
+    <div class="check-item">✅ Gratis Revisi 1x</div>
+    <div class="check-item">✅ Panduan Cara Pakai</div>
+    <br>
+    
+    <p><strong>💰 PAKET LENGKAP — Rp 100.000</strong></p>
+    <div class="check-item">✅ Semua Fitur Paket Dasar</div>
+    <div class="check-item">✅ Galeri Foto Produk</div>
+    <div class="check-item">✅ Pasang QRIS Pembayaran</div>
+    <div class="check-item">✅ Peta Lokasi Usaha</div>
+    <div class="check-item">✅ Gratis Revisi 3x</div>
+    <div class="check-item">✅ Panduan Penggunaan + Update Konten</div>
+    <br>
+    
+    <p style="color:#94a3b8; font-size:0.9rem;">💡 Semua website menggunakan platform resmi: GitHub, Vercel, Netlify, Cloudflare Pages + Blogger</p>
+</div>
+
+<!-- ===================================== -->
+<!-- FORMULIR PESANAN — KIRIM LANGSUNG KE WA! -->
+<!-- ===================================== -->
+<div class="form-box">
+    <h2>📝 Pesan Sekarang</h2>
+    <p style="color:#94a3b8; margin-bottom:15px;">Isi data di bawah, nanti otomatis ke WhatsApp saya!</p>
+    
+    <label>Nama Kamu / Nama Usaha:</label>
+    <input type="text" id="nama" placeholder="Contoh: Toko Bunga Mawar">
+    
+    <label>Jenis Usaha / Kebutuhan Website:</label>
+    <input type="text" id="jenis" placeholder="Contoh: Toko Sembako / Jasa Cuci Motor">
+    
+    <label>Pilihan Paket:</label>
+    <input type="text" id="paket" placeholder="Paket Dasar / Paket Lengkap">
+    
+    <label>Nomor WhatsApp:</label>
+    <input type="tel" id="wa" placeholder="08xx-xxxx-xxxx">
+    
+    <label>Catatan Tambahan:</label>
+    <textarea id="catatan" rows="3" placeholder="Ceritakan kebutuhan khususmu..."></textarea>
+    
+    <button onclick="kirimKeWA()">📲 KIRIM PESANAN VIA WHATSAPP</button>
+</div>
+
+<!-- ===================================== -->
+<!-- FITUR YANG KAMU DAPATKAN -->
+<!-- ===================================== -->
+<div class="card">
+    <h2>[2] Fitur yang Kamu Dapatkan</h2>
+    <div class="check-item">✅ Tampilan Modern & Bisa Disesuaikan</div>
+    <div class="check-item">✅ Bisa Pasang Tombol WhatsApp & QRIS</div>
+    <div class="check-item">✅ Mudah Dibuka di HP & Komputer</div>
+    <div class="check-item">✅ Proses Mudah & Harga Terjangkau</div>
+    <div class="check-item">✅ Gratis Panduan Cara Menggunakannya</div>
+    <div class="check-item">✅ Bisa Direvisi Sampai Cocok!</div>
+</div>
+
+<!-- ===================================== -->
+<!-- MULAI SEKARANG -->
+<!-- ===================================== -->
+<div class="card">
+    <h2>[3] Mulai Sekarang</h2>
+    <p>Jangan biarkan bisnismu tertinggal zaman. Miliki website sendiri agar lebih dipercaya pelanggan dan mudah ditemukan orang di mana saja.</p>
+    <p style="margin-top: 10px; font-weight: bold;">💬 Konsultasi & tanya-tanya dulu GRATIS!</p>
+</div>
+
+<!-- TOMBOL UTAMA -->
+<a href="https://wa.me/62895411239265?text=Halo%20Saya%20ingin%20pesan%20website" class="btn-wa" target="_blank">
+    💬 KONSULTASI GRATIS via WhatsApp
+</a>
+
+<!-- ===================================== -->
+<!-- FOOTER -->
+<!-- ===================================== -->
+<footer>
+    <p>© 2026 Ikrom Walidaini — Jasa Pembuatan Website</p>
+    <p style="margin-top:5px;">Platform: GitHub • Vercel • Netlify • Cloudflare Pages • Blogger</p>
+</footer>
+
+</div>
+
+<!-- ===================================== -->
+<!-- JAVASCRIPT: LIPAT KOTAK & KIRIM WA -->
+<!-- ===================================== -->
 <script>
-function bukaTutup(id) {
+// Fungsi buka/tutup kotak
+function toggleBox(id) {
   const box = document.getElementById(id);
   box.style.display = (box.style.display === 'block') ? 'none' : 'block';
 }
 
+// Fungsi kirim formulir langsung ke WhatsApp
 function kirimKeWA() {
   const nama = document.getElementById('nama').value;
-  const nomor = document.getElementById('nomor').value;
-  const pesanan = document.getElementById('pesanan').value;
-  const pesan = document.getElementById('pesan').value;
+  const jenis = document.getElementById('jenis').value;
+  const paket = document.getElementById('paket').value;
+  const wa = document.getElementById('wa').value;
+  const catatan = document.getElementById('catatan').value;
 
-  if(!nama || !nomor) {
-    alert('⚠️ Nama dan Nomor WhatsApp wajib diisi!');
+  if (!nama || !jenis || !paket || !wa) {
+    alert('⚠️ Mohon lengkapi semua data ya!');
     return;
   }
 
-  const teks = `Halo Ikrom! Saya ingin pesan pembuatan website.%0A%0ANama: ${nama}%0ANomor WA: ${nomor}%0AJenis Pesanan: ${pesanan}%0APesan: ${pesan}`;
-  const nomorTujuan = '62895411239265'; 
-  window.open(`https://wa.me/${nomorTujuan}?text=${teks}`);
+  const pesan = `Halo! Saya mau pesan website.%0A%0A📋 DATA PESANAN:%0A━━━━━━━━━━━━━━%0ANama/Usaha: ${nama}%0AJenis Usaha: ${jenis}%0APilihan Paket: ${paket}%0ANomor WA: ${wa}%0ACatatan: ${catatan || '-'}`;
+
+  // Ganti nomor WA di bawah dengan nomor kamu!
+  window.open(`https://wa.me/62895411239265?text=${pesan}`, '_blank');
 }
 </script>
 
 </body>
 </html>
+
 
