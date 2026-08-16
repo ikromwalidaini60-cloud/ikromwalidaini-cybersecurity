@@ -3,262 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Pembuatan Website — Ikrom Walidaini</title>
+    <title>Ikrom Walidaini — Pembuatan Website</title>
     <style>
-        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Arial, sans-serif;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #f8fafc;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #0f172a;
+            color: #fff;
             line-height: 1.6;
-            padding: 20px;
-            min-height: 100vh;
+            padding-bottom: 50px;
         }
-        .container {max-width: 800px; margin: 0 auto;}
-        
-        /* ===== HEADER ===== */
-        header {text-align: center; padding: 40px 20px;}
-        h1 {font-size: 2.2rem; color: #22d3ee; margin-bottom: 10px;}
-        .subtitle {color: #94a3b8; font-size: 1.1rem;}
-        .terminal-bar {
+
+        /* ===================================== */
+        /* 🎬 BAGIAN ATAS: GALAKSI + NAMA */
+        /* ===================================== */
+        .header-galaksi {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .canvas-galaksi {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .nama-galaksi {
+            position: relative;
+            z-index: 2;
+            color: #00ffcc;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 
+                0 0 20px #00ffcc,
+                0 0 40px #00ffcc,
+                0 0 60px #0088ff;
+            letter-spacing: 4px;
+            line-height: 1.4;
+            pointer-events: none;
+        }
+        .nama-galaksi span { display: block; }
+        .sub-judul {
+            text-align: center;
+            padding: 20px 20px 25px;
+            color: #88ccff;
+            font-size: 1.05rem;
+            background: #0f172a;
+        }
+
+        /* ===================================== */
+        /* 📄 KONTEN UTAMA */
+        /* ===================================== */
+        .konten {
+            padding: 0 16px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* === MENU LIPAT === */
+        .menu-box {
             background: #1e293b;
             border: 1px solid #334155;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-family: monospace;
-            color: #22d3ee;
-            margin: 20px 0;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 18px;
             cursor: pointer;
-            transition: all 0.3s;
         }
-        .terminal-bar:hover {background: #334155;}
-        .terminal-body {
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-top: none;
-            padding: 20px;
-            border-radius: 0 0 8px 8px;
-            margin-top: -1px;
+        .menu-judul {
+            font-size: 1.05rem;
+            color: #38bdf8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+        .menu-isi {
             display: none;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid #334155;
+            color: #bae6fd;
+            line-height: 1.9;
         }
-        
-        /* ===== KARTU & FITUR ===== */
+        .check-item { margin: 6px 0; }
+
+        /* === KARD PENAWARAN === */
         .card {
             background: #1e293b;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 20px 0;
             border: 1px solid #334155;
-            transition: transform 0.3s;
+            border-radius: 12px;
+            padding: 24px 20px;
+            margin-bottom: 20px;
         }
-        .card:hover {transform: translateY(-3px); border-color: #22d3ee;}
-        h2 {font-size: 1.5rem; color: #22d3ee; margin-bottom: 20px;}
-        .check-item {margin: 10px 0; padding-left: 5px;}
-        
-        /* ===== TOMBOL UTAMA ===== */
-        .btn-wa {
-            display: block;
-            background: #25d366;
-            color: white;
-            text-align: center;
-            padding: 18px 30px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            margin: 30px 0;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
-            transition: all 0.3s;
+        .card h3 {
+            color: #38bdf8;
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+            line-height: 1.5;
         }
-        .btn-wa:hover {transform: translateY(-3px);}
-        
-        /* ===== FORMULIR PESANAN ===== */
-        .form-box {
+        .card p {
+            color: #e0f2fe;
+            font-size: 1rem;
+        }
+
+        /* ===================================== */
+        /* 📋 BAGIAN PAKET & HARGA — BARU! */
+        /* ===================================== */
+        .paket-section {
             background: #1e293b;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 30px 0;
+            border: 2px solid #38bdf8;
+            border-radius: 14px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+        }
+        .paket-judul {
+            font-size: 1.4rem;
+            color: #38bdf8;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        .paket {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #334155;
+        }
+        .paket:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .paket-nama {
+            font-size: 1.2rem;
+            color: #fbbf24;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .fitur {
+            color: #d1fae5;
+            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.7;
+        }
+        .fitur span { color: #22c55e; font-weight: bold; }
+
+        /* ===================================== */
+        /* 📝 FORMULIR PESANAN — BARU! */
+        /* ===================================== */
+        .form-section {
+            background: #1e293b;
             border: 1px solid #334155;
+            border-radius: 14px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
         }
-        input, textarea {
+        .form-judul {
+            font-size: 1.4rem;
+            color: #38bdf8;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .form-desc {
+            color: #94a3b8;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-label {
+            display: block;
+            color: #e0f2fe;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-input {
             width: 100%;
-            padding: 12px;
-            margin: 8px 0 15px;
-            border-radius: 8px;
-            border: 1px solid #475569;
+            padding: 14px 16px;
             background: #0f172a;
-            color: white;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #fff;
             font-size: 1rem;
         }
-        input:focus, textarea:focus {outline: none; border-color: #22d3ee;}
-        button {
-            background: #22d3ee;
-            color: #0f172a;
+        .form-input::placeholder {
+            color: #64748b;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+        textarea.form-input {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .kirim-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: #fff;
             border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
+            transition: transform 0.2s;
+            margin-top: 10px;
         }
-        button:hover {background: #06b6d4;}
-        
-        /* ===== FOOTER ===== */
-        footer {text-align: center; margin-top: 50px; padding: 20px; color: #64748b; font-size: 0.9rem;}
+        .kirim-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* === TOMBOL WA === */
+        .wa-btn {
+            display: block;
+            max-width: 280px;
+            margin: 30px auto 10px;
+            padding: 14px 25px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.05rem;
+        }
+
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            padding: 30px 20px 10px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-
 <!-- ===================================== -->
-<!-- HEADER -->
+<!-- 🎬 BAGIAN ATAS: GALAKSI + NAMA -->
 <!-- ===================================== -->
-<header>
-    <h1>⚡ IKROM WALIDAINI</h1>
-    <p class="subtitle">Jasa Pembuatan Website — Profesional & Terjangkau</p>
-    <div class="terminal-bar" onclick="toggleBox('status')">
-        ⚡ sistem — siap melayani permintaan ▼
+<div class="header-galaksi">
+    <canvas class="canvas-galaksi" id="galaksi-canvas"></canvas>
+    <div class="nama-galaksi">
+        <span>IKROM</span>
+        <span>WALIDAINI</span>
     </div>
-    <div class="terminal-body" id="status">
-        <p>✅ Platform: GitHub, Vercel, Netlify, Cloudflare Pages + Blogger</p>
-        <p>✅ Status: Online & Siap Menerima Pesanan</p>
-        <p>✅ Garansi: Revisi Gratis + Panduan Penggunaan</p>
+</div>
+<div class="sub-judul">Jasa Pembuatan Website — Profesional & Terjangkau</div>
+
+<!-- ===================================== -->
+<!-- 📄 KONTEN UTAMA -->
+<!-- ===================================== -->
+<div class="konten">
+
+    <!-- MENU LIPAT -->
+    <div class="menu-box" onclick="toggleMenu('menu1')">
+        <div class="menu-judul">
+            <span>⚡ daftar_layanan --tampilkan</span>
+            <span id="icon-menu1">▼</span>
+        </div>
+        <div class="menu-isi" id="menu1">
+            <div class="check-item">✅ Website Bisnis & Profil Usaha</div>
+            <div class="check-item">✅ Toko Online & Jualan</div>
+            <div class="check-item">✅ Desain Responsive (HP & Komputer)</div>
+            <div class="check-item">✅ Revisi & Bantuan Teknis</div>
+        </div>
     </div>
-</header>
 
-<!-- ===================================== -->
-<!-- PERTANYAAN UTAMA -->
-<!-- ===================================== -->
-<div class="card">
-    <h2>[1] Punya Usaha? Ingin Terlihat Lebih Profesional?</h2>
-    <p>Saya siap bantu buatkan website impianmu! Tampilan rapi, elegan, dan nyaman dibuka di HP maupun komputer.</p>
-    <p style="margin-top: 10px;">🚀 <strong>Bisa untuk Profil Usaha, Toko Online, Jasa, & Lainnya</strong></p>
-</div>
+    <!-- ===================================== -->
+    <!-- 📋 PAKET & HARGA -->
+    <!-- ===================================== -->
+    <div class="paket-section">
+        <h2 class="paket-judul">📋 Pilihan Paket & Fitur</h2>
 
-<!-- ===================================== -->
-<!-- DAFTAR LAYANAN — BISA DILIPAT! -->
-<!-- ===================================== -->
-<div class="terminal-bar" onclick="toggleBox('layanan')">
-    ⚡ daftar_layanan --tampilkan ▼
-</div>
-<div class="card terminal-body" id="layanan">
-    <h3 style="color:#22d3ee; margin-bottom:15px;">📋 Pilihan Paket & Fitur</h3>
-    
-    <p><strong>💰 PAKET DASAR — Rp 50.000</strong></p>
-    <div class="check-item">✅ Tampilan Profil Usaha</div>
-    <div class="check-item">✅ Tombol WhatsApp Langsung</div>
-    <div class="check-item">✅ Tampilan Rapi di HP & Komputer</div>
-    <div class="check-item">✅ Gratis Revisi 1x</div>
-    <div class="check-item">✅ Panduan Cara Pakai</div>
-    <br>
-    
-    <p><strong>💰 PAKET LENGKAP — Rp 100.000</strong></p>
-    <div class="check-item">✅ Semua Fitur Paket Dasar</div>
-    <div class="check-item">✅ Galeri Foto Produk</div>
-    <div class="check-item">✅ Pasang QRIS Pembayaran</div>
-    <div class="check-item">✅ Peta Lokasi Usaha</div>
-    <div class="check-item">✅ Gratis Revisi 3x</div>
-    <div class="check-item">✅ Panduan Penggunaan + Update Konten</div>
-    <br>
-    
-    <p style="color:#94a3b8; font-size:0.9rem;">💡 Semua website menggunakan platform resmi: GitHub, Vercel, Netlify, Cloudflare Pages + Blogger</p>
-</div>
+        <div class="paket">
+            <h3 class="paket-nama">💰 PAKET DASAR — Rp 50.000</h3>
+            <div class="fitur"><span>✅</span> Tampilan Profil Usaha</div>
+            <div class="fitur"><span>✅</span> Tombol WhatsApp Langsung</div>
+            <div class="fitur"><span>✅</span> Tampilan Rapi di HP & Komputer</div>
+            <div class="fitur"><span>✅</span> Gratis Revisi 1x</div>
+            <div class="fitur"><span>✅</span> Panduan Cara Pakai</div>
+        </div>
 
-<!-- ===================================== -->
-<!-- FORMULIR PESANAN — KIRIM LANGSUNG KE WA! -->
-<!-- ===================================== -->
-<div class="form-box">
-    <h2>📝 Pesan Sekarang</h2>
-    <p style="color:#94a3b8; margin-bottom:15px;">Isi data di bawah, nanti otomatis ke WhatsApp saya!</p>
-    
-    <label>Nama Kamu / Nama Usaha:</label>
-    <input type="text" id="nama" placeholder="Contoh: Toko Bunga Mawar">
-    
-    <label>Jenis Usaha / Kebutuhan Website:</label>
-    <input type="text" id="jenis" placeholder="Contoh: Toko Sembako / Jasa Cuci Motor">
-    
-    <label>Pilihan Paket:</label>
-    <input type="text" id="paket" placeholder="Paket Dasar / Paket Lengkap">
-    
-    <label>Nomor WhatsApp:</label>
-    <input type="tel" id="wa" placeholder="08xx-xxxx-xxxx">
-    
-    <label>Catatan Tambahan:</label>
-    <textarea id="catatan" rows="3" placeholder="Ceritakan kebutuhan khususmu..."></textarea>
-    
-    <button onclick="kirimKeWA()">📲 KIRIM PESANAN VIA WHATSAPP</button>
-</div>
+        <div class="paket">
+            <h3 class="paket-nama">💰 PAKET LENGKAP — Rp 100.000</h3>
+            <div class="fitur"><span>✅</span> Semua Fitur Paket Dasar</div>
+            <div class="fitur"><span>✅</span> Galeri Foto Produk</div>
+            <div class="fitur"><span>✅</span> Pasang QRIS Pembayaran</div>
+            <div class="fitur"><span>✅</span> Peta Lokasi Usaha</div>
+            <div class="fitur"><span>✅</span> Gratis Revisi 3x</div>
+            <div class="fitur"><span>✅</span> Panduan Penggunaan + Update Konten</div>
+        </div>
+    </div>
 
-<!-- ===================================== -->
-<!-- FITUR YANG KAMU DAPATKAN -->
-<!-- ===================================== -->
-<div class="card">
-    <h2>[2] Fitur yang Kamu Dapatkan</h2>
-    <div class="check-item">✅ Tampilan Modern & Bisa Disesuaikan</div>
-    <div class="check-item">✅ Bisa Pasang Tombol WhatsApp & QRIS</div>
-    <div class="check-item">✅ Mudah Dibuka di HP & Komputer</div>
-    <div class="check-item">✅ Proses Mudah & Harga Terjangkau</div>
-    <div class="check-item">✅ Gratis Panduan Cara Menggunakannya</div>
-    <div class="check-item">✅ Bisa Direvisi Sampai Cocok!</div>
-</div>
+    <!-- ===================================== -->
+    <!-- 📝 FORMULIR PESANAN -->
+    <!-- ===================================== -->
+    <div class="form-section">
+        <h2 class="form-judul">📝 Pesan Sekarang</h2>
+        <p class="form-desc">Isi data di bawah, nanti otomatis ke WhatsApp saya!</p>
 
-<!-- ===================================== -->
-<!-- MULAI SEKARANG -->
-<!-- ===================================== -->
-<div class="card">
-    <h2>[3] Mulai Sekarang</h2>
-    <p>Jangan biarkan bisnismu tertinggal zaman. Miliki website sendiri agar lebih dipercaya pelanggan dan mudah ditemukan orang di mana saja.</p>
-    <p style="margin-top: 10px; font-weight: bold;">💬 Konsultasi & tanya-tanya dulu GRATIS!</p>
-</div>
+        <form id="formPesanan">
+            <div class="form-group">
+                <label class="form-label">Nama Kamu / Nama Usaha:</label>
+                <input type="text" class="form-input" id="nama" placeholder="Contoh: Toko Bunga Mawar" required>
+            </div>
 
-<!-- TOMBOL UTAMA -->
-<a href="https://wa.me/62895411239265?text=Halo%20Saya%20ingin%20pesan%20website" class="btn-wa" target="_blank">
-    💬 KONSULTASI GRATIS via WhatsApp
-</a>
+            <div class="form-group">
+                <label class="form-label">Jenis Usaha / Kebutuhan Website:</label>
+                <input type="text" class="form-input" id="jenis" placeholder="Contoh: Toko Sembako / Jasa Cuci Motor" required>
+            </div>
 
-<!-- ===================================== -->
-<!-- FOOTER -->
-<!-- ===================================== -->
-<footer>
-    <p>© 2026 Ikrom Walidaini — Jasa Pembuatan Website</p>
-    <p style="margin-top:5px;">Platform: GitHub • Vercel • Netlify • Cloudflare Pages • Blogger</p>
-</footer>
+            <div class="form-group">
+                <label class="form-label">Pilihan Paket:</label>
+                <input type="text" class="form-input" id="paket" placeholder="Paket Dasar / Paket Lengkap" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Nomor WhatsApp:</label>
+                <input type="tel" class="form-input" id="wa" placeholder="08xx-xxxx-xxxx" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Catatan Tambahan:</label>
+                <textarea class="form-input" id="catatan" placeholder="Ceritakan kebutuhan khususmu..."></textarea>
+            </div>
+
+            <button type="button" class="kirim-btn" onclick="kirimKeWA()">📲 KIRIM PESANAN VIA WHATSAPP</button>
+        </form>
+    </div>
+
+    <!-- TOMBOL WA -->
+    <a href="https://wa.me/6282268808054" class="wa-btn">📲 Chat Langsung via WhatsApp</a>
+
+    <footer>
+        <p>© 2026 Ikrom Walidaini — Pembuatan Website Murah & Berkualitas</p>
+    </footer>
 
 </div>
 
 <!-- ===================================== -->
-<!-- JAVASCRIPT: LIPAT KOTAK & KIRIM WA -->
+<!-- 🎬 SCRIPT GALAKSI + FUNGSI -->
 <!-- ===================================== -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script>
-// Fungsi buka/tutup kotak
-function toggleBox(id) {
-  const box = document.getElementById(id);
-  box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+// === GALAKSI ===
+const canvas = document.getElementById('galaksi-canvas');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 2000);
+const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const jumlahPartikel = 5000;
+const geometri = new THREE.BufferGeometry();
+const posisi = new Float32Array(jumlahPartikel * 3);
+const warna = new Float32Array(jumlahPartikel * 3);
+const warnaPusat = new THREE.Color(0x00ffcc);
+const warnaLuar = new THREE.Color(0x0088ff);
+
+for (let i = 0; i < jumlahPartikel; i++) {
+    const i3 = i * 3;
+    const jarak = Math.random() * 400;
+    const sudut = jarak * 0.05 + Math.random() * 0.5;
+    const ketinggian = (Math.random() - 0.5) * jarak * 0.3;
+    posisi[i3] = Math.cos(sudut) * jarak;
+    posisi[i3 + 1] = ketinggian;
+    posisi[i3 + 2] = Math.sin(sudut) * jarak;
+    const faktor = jarak / 400;
+    const c = new THREE.Color().lerpColors(warnaPusat, warnaLuar, faktor);
+    warna[i3] = c.r; warna[i3 + 1] = c.g; warna[i3 + 2] = c.b;
 }
 
-// Fungsi kirim formulir langsung ke WhatsApp
+geometri.setAttribute('position', new THREE.BufferAttribute(posisi, 3));
+geometri.setAttribute('color', new THREE.BufferAttribute(warna, 3));
+
+const material = new THREE.PointsMaterial({
+    size: 1.8, vertexColors: true, transparent: true,
+    blending: THREE.AdditiveBlending, depthWrite: false
+});
+
+const galaksi = new THREE.Points(geometri, material);
+scene.add(galaksi);
+camera.position.z = 500;
+
+function animate() {
+    requestAnimationFrame(animate);
+    galaksi.rotation.y += 0.002;
+    galaksi.rotation.x += 0.0005;
+    renderer.render(scene, camera);
+}
+animate();
+
+window.addEventListener('resize', () => {
+    const wrapper = document.querySelector('.header-galaksi');
+    camera.aspect = wrapper.clientWidth / wrapper.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
+});
+
+// === MENU LIPAT ===
+function toggleMenu(id) {
+    const el = document.getElementById(id);
+    const icon = document.getElementById('icon-' + id);
+    el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    icon.textContent = (el.style.display === 'block') ? '▲' : '▼';
+}
+
+// === KIRIM PESANAN KE WHATSAPP ===
 function kirimKeWA() {
-  const nama = document.getElementById('nama').value;
-  const jenis = document.getElementById('jenis').value;
-  const paket = document.getElementById('paket').value;
-  const wa = document.getElementById('wa').value;
-  const catatan = document.getElementById('catatan').value;
+    const nama = document.getElementById('nama').value.trim();
+    const jenis = document.getElementById('jenis').value.trim();
+    const paket = document.getElementById('paket').value.trim();
+    const wa = document.getElementById('wa').value.trim();
+    const catatan = document.getElementById('catatan').value.trim();
 
-  if (!nama || !jenis || !paket || !wa) {
-    alert('⚠️ Mohon lengkapi semua data ya!');
-    return;
-  }
+    if (!nama || !jenis || !paket || !wa) {
+        alert('⚠️ Mohon isi semua kolom yang wajib ya!');
+        return;
+    }
 
-  const pesan = `Halo! Saya mau pesan website.%0A%0A📋 DATA PESANAN:%0A━━━━━━━━━━━━━━%0ANama/Usaha: ${nama}%0AJenis Usaha: ${jenis}%0APilihan Paket: ${paket}%0ANomor WA: ${wa}%0ACatatan: ${catatan || '-'}`;
+    let pesan = `📋 *PESANAN WEBSITE*\n\n`;
+    pesan += `👤 Nama/Usaha: ${nama}\n`;
+    pesan += `🏢 Jenis Usaha: ${jenis}\n`;
+    pesan += `📦 Pilihan Paket: ${paket}\n`;
+    pesan += `📞 WhatsApp: ${wa}\n`;
+    if (catatan) pesan += `📝 Catatan: ${catatan}\n`;
+    pesan += `\n— Kirim dari Website Ikrom Walidaini —`;
 
-  // Ganti nomor WA di bawah dengan nomor kamu!
-  window.open(`https://wa.me/62895411239265?text=${pesan}`, '_blank');
+    const linkWA = `https://wa.me/6282268808054?text=${encodeURIComponent(pesan)}`;
+    window.open(linkWA, '_blank');
 }
 </script>
 
 </body>
 </html>
+
 
 
