@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Kredit 3D — Ikrom Walidaini</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Calibri, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            perspective: 1000px; /* Efek kedalaman 3D */
+        }
+
+        /* ===== KOTAK KARTU ===== */
+        .card-container {
+            width: 380px;
+            height: 240px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+            cursor: pointer;
+        }
+
+        /* EFEK PUTAR SAAT DIHOVER / DIKLIK */
+        .card-container:hover,
+        .card-container.flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* ===== BAGIAN DEPAN & BELAKANG ===== */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            padding: 25px;
+            backface-visibility: hidden; /* Sembunyikan sisi belakang saat dilihat depan */
+            background: linear-gradient(135deg, #232526, #414345);
+            color: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .card-front {
+            transform: rotateY(0deg);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        }
+
+        /* ===== ELEMEN DI KARTU ===== */
+        .chip {
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(135deg, #ffd700, #ffb800);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        .bank-name {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        .card-number {
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            margin: 15px 0 25px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .card-name {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .expiry {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ===== LOGO MASTERCARD ===== */
+        .logo {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            gap: -10px;
+        }
+        .circle-red {
+            width: 40px;
+            height: 40px;
+            background: #eb001b;
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+        .circle-yellow {
+            width: 40px;
+            height: 40px;
+            background: #f79e1b;
+            border-radius: 50%;
+            opacity: 0.9;
+            margin-left: -15px;
+        }
+
+        /* ===== SISI BELAKANG KARTU ===== */
+        .magnetic-strip {
+            width: 100%;
+            height: 45px;
+            background: linear-gradient(90deg, #333, #555, #333);
+            margin: 10px 0;
+        }
+
+        .cvv-box {
+            background: white;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .hint {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===================================== -->
+<!-- KARTU 3D YANG BISA DIPUTAR -->
+<!-- ===================================== -->
+<div class="card-container" onclick="this.classList.toggle('flipped')">
+    <!-- SISI DEPAN -->
+    <div class="card-front">
+        <div class="bank-name">BANK NAME</div>
+        <div class="chip"></div>
+        <div class="card-number">1111 2222 3333 4444</div>
+        <div class="card-name">NAMA PEMILIK KARTU</div>
+        <div class="expiry">Valid Thru: 02/30</div>
+        <div class="logo">
+            <div class="circle-red"></div>
+            <div class="circle-yellow"></div>
+        </div>
+    </div>
+
+    <!-- SISI BELAKANG -->
+    <div class="card-back">
+        <div class="magnetic-strip"></div>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 15px;">CVV / CVC</p>
+        <div class="cvv-box">***</div>
+        <p style="font-size: 0.75rem; opacity: 0.5; margin-top: 20px; line-height: 1.5;">
+            Kartu ini adalah milik bank yang menerbitkan. Penggunaan tunduk pada perjanjian pemegang kartu.
+        </p>
+    </div>
+</div>
+
+<p class="hint">👆 Klik / Arahkan kursor untuk memutar kartu</p>
+
+</body>
+</html>
