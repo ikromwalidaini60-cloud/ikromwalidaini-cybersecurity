@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaksi Partikel — Ikrom Walidaini</title>
+    <style>
+        * { margin: 0; padding: 0; overflow: hidden; }
+        body { background: #000; }
+        canvas { display: block; }
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #00ffcc;
+            font-size: 2.5rem;
+            text-shadow: 0 0 20px #00ffcc;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<h1>IKROM WALIDAINI</h1>
+
+<!-- Panggil library Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+<script>
+// === SETUP SCENE, KAMERA, RENDERER ===
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+
+// === BUAT PARTIKEL GALAKSI ===
+const jumlahPartikel = 8000;
+const geometri = new THREE.BufferGeometry();
+const posisi = new Float32Array(jumlahPartikel * 3);
+const warna = new Float32Array(jumlahPartikel * 3);
+
+const warnaPusat = new THREE.Color(0x00ffcc);
+const warnaLuar = new THREE.Color(0x0088ff);
+
+for (let i = 0; i < jumlahPartikel; i++) {
+    const i3 = i * 3;
+    
+    // Pola spiral galaksi
+    const jarak = Math.random() * 500;
+    const sudut = jarak * 0.05 + Math.random() * 0.5;
+    const ketinggian = (Math.random() - 0.5) * jarak * 0.3;
+    
+    posisi[i3] = Math.cos(sudut) * jarak;       // X
+    posisi[i3 + 1] = ketinggian;                // Y
+    posisi[i3 + 2] = Math.sin(sudut) * jarak;   // Z
+    
+    // Warna gradasi dari pusat ke luar
+    const faktor = jarak / 500;
+    const c = new THREE.Color().lerpColors(warnaPusat, warnaLuar, faktor);
+    warna[i3] = c.r;
+    warna[i3 + 1] = c.g;
+    warna[i3 + 2] = c.b;
+}
+
+geometri.setAttribute('position', new THREE.BufferAttribute(posisi, 3));
+geometri.setAttribute('color', new THREE.BufferAttribute(warna, 3));
+
+// === MATERIAL PARTIKEL ===
+const material = new THREE.PointsMaterial({
+    size: 2,
+    vertexColors: true,
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false
+});
+
+const galaksi = new THREE.Points(geometri, material);
+scene.add(galaksi);
+
+// === POSISI KAMERA ===
+camera.position.z = 600;
+
+// === ANIMASI BERPUTAR ===
+function animate() {
+    requestAnimationFrame(animate);
+    
+    galaksi.rotation.y += 0.002;  // Kecepatan putar
+    galaksi.rotation.x += 0.0005;
+    
+    renderer.render(scene, camera);
+}
+animate();
+
+// === RESPONSIVE — SESUAI UKURAN LAYAR ===
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+
+</body>
+</html>
