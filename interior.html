@@ -154,20 +154,22 @@
 </section>
 
 <!-- ===================================== -->
-<!-- LAYANAN — TOMBOL BISA DILIPAT -->
+<!-- 🛠️ LAYANAN KAMI -->
 <!-- ===================================== -->
-<section id="layanan">
+<section>
     <h2>🛋️ Layanan Kami</h2>
 
+    <!-- LAYANAN 1 -->
     <div style="margin-bottom: 12px;">
         <div onclick="toggleLayanan('l1')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
             ✅ Desain & Pembuatan Interior Rumah <span style="float:right;">▼</span>
         </div>
         <div id="l1" style="display: none; padding: 18px 20px; background: #fff9e8; border: 1px solid #f5e4b7; border-radius: 0 0 10px 10px; margin-top: -2px;">
-            Penataan ruang tamu, kamar tidur, dapur, dan ruang keluarga agar nyaman, rapi, dan terlihat indah sesuai selera Anda.
+            Desain interior rumah sesuai selera dan kebutuhan Anda, ruangan terlihat mewah, rapi, dan nyaman.
         </div>
     </div>
 
+    <!-- LAYANAN 2 -->
     <div style="margin-bottom: 12px;">
         <div onclick="toggleLayanan('l2')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
             ✅ Custom Furniture Sesuai Keinginan <span style="float:right;">▼</span>
@@ -177,6 +179,7 @@
         </div>
     </div>
 
+    <!-- LAYANAN 3 -->
     <div style="margin-bottom: 12px;">
         <div onclick="toggleLayanan('l3')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
             ✅ Interior Kantor & Ruang Kerja <span style="float:right;">▼</span>
@@ -186,6 +189,7 @@
         </div>
     </div>
 
+    <!-- LAYANAN 4 -->
     <div style="margin-bottom: 12px;">
         <div onclick="toggleLayanan('l4')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
             ✅ Interior Toko & Tempat Usaha <span style="float:right;">▼</span>
@@ -193,6 +197,22 @@
         <div id="l4" style="display: none; padding: 18px 20px; background: #fff9e8; border: 1px solid #f5e4b7; border-radius: 0 0 10px 10px; margin-top: -2px;">
             Penataan toko & tempat usaha agar menarik, rapi, dan membuat pelanggan betah berkunjung.
         </div>
+    </div>
+
+</section>
+
+<!-- ✅ KODE TOMBOL LIPAT (WAJIB ADA DI BAWAH!) -->
+<script>
+function toggleLayanan(id) {
+  const box = document.getElementById(id);
+  if (box.style.display === 'none' || box.style.display === '') {
+    box.style.display = 'block';
+  } else {
+    box.style.display = 'none';
+  }
+}
+</script>
+        
 </script>
 <!-- ===================================== -->
 <!-- 📸 INILAH HASIL KARYA KAMI -->
