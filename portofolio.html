@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio — Ikromwalidaini</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', 'Times New Roman', serif;}
+        body {background: #fafafa; color: #333; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 20px;}
+
+        /* === BAGIAN JUDUL UTAMA === */
+        .header-portofolio {
+            text-align: right;
+            padding: 50px 30px;
+            position: relative;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 40px;
+        }
+        .header-portofolio::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 20px; bottom: 20px;
+            width: 3px;
+            background: linear-gradient(to bottom, #d4af37, #8b4513);
+        }
+        .header-portofolio h1 {
+            font-size: 3rem;
+            color: #2c2c2c;
+            letter-spacing: 3px;
+        }
+        .header-portofolio .sub-judul {
+            font-size: 1.3rem;
+            color: #888;
+            margin-right: 8px;
+        }
+        .header-portofolio .nama {
+            font-size: 1.8rem;
+            color: #444;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        .header-portofolio .tahun {
+            font-size: 1rem;
+            color: #999;
+        }
+
+        /* === BAGIAN KETERAMPILAN === */
+        .section {margin-bottom: 40px;}
+        .judul-bagian {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c2c2c;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .grid-keahlian {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .item-keahlian h4 {font-size: 0.95rem; color: #555; margin-bottom: 10px;}
+        .daftar-software {display: flex; flex-wrap: wrap; gap: 12px;}
+        .software-icon {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; color: #666;
+            background: #fff;
+        }
+
+        .bahasa {display: flex; gap: 15px;}
+        .bahasa span {padding: 5px 12px; border-right: 1px solid #ccc; color: #555;}
+        .bahasa span:last-child {border-right: none;}
+
+        .minat {display: flex; flex-wrap: wrap; gap: 10px;}
+        .minat span {
+            padding: 6px 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #555;
+            background: #fff;
+        }
+
+        /* === GALERI HASIL KARYA === */
+        .galeri {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+        }
+        .galeri-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .galeri-item img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+        .galeri-item p {
+            padding: 8px;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+        }
+
+        /* === RESPONSIVE HP === */
+        @media (max-width: 600px) {
+            .grid-keahlian {grid-template-columns: 1fr;}
+            .header-portofolio h1 {font-size: 2rem;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===================================== -->
+<!-- HEADER UTAMA -->
+<!-- ===================================== -->
+<div class="header-portofolio">
+    <p class="nama">Ikromwalidaini</p>
+    <span class="sub-judul">Interior</span>
+    <h1>PORTOFOLIO.</h1>
+    <p class="tahun">2026 — Sekarang<br>Kumpulan Hasil Karya</p>
+</div>
+
+<!-- ===================================== -->
+<!-- KETERAMPILAN & SOFTWARE -->
+<!-- ===================================== -->
+<div class="section">
+    <h3 class="judul-bagian">Skill — Software</h3>
+    <div class="daftar-software">
+        <div class="software-icon">SketchUp</div>
+        <div class="software-icon">Enscape</div>
+        <div class="software-icon">AutoCAD</div>
+        <div class="software-icon">Canva</div>
+        <div class="software-icon">Photoshop</div>
+        <div class="software-icon">Office</div>
+    </div>
+</div>
+
+<!-- ===================================== -->
+<!-- BAHASA -->
+<!-- ===================================== -->
+<div class="section">
+    <h3 class="judul-bagian">Bahasa</h3>
+    <div class="bahasa">
+        <span>Bahasa Indonesia</span>
+        <span>Bahasa Inggris</span>
+    </div>
+</div>
+
+<!-- ===================================== -->
+<!-- BIDANG MINAT -->
+<!-- ===================================== -->
+<div class="section">
+    <h3 class="judul-bagian">Ketertarikan</h3>
+    <div class="minat">
+        <span>Arsitektur</span>
+        <span>Desain Interior</span>
+        <span>Sketse & Layouting</span>
+        <span>Desain Grafis</span>
+        <span>3D Modeling</span>
+        <span>Desain Furnitur</span>
+    </div>
+</div>
+
+<!-- ===================================== -->
+<!-- GALERI HASIL KARYA -->
+<!-- ===================================== -->
+<div class="section">
+    <h3 class="judul-bagian">📸 Hasil Karya</h3>
+    <div class="galeri">
+        <div class="galeri-item">
+            <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior1.jpg" alt="Hasil Karya 1">
+            <p>Karya 1</p>
+        </div>
+        <div class="galeri-item">
+            <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior2.jpg" alt="Hasil Karya 2">
+            <p>Karya 2</p>
+        </div>
+        <div class="galeri-item">
+            <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior3.jpg" alt="Hasil Karya 3">
+            <p>Karya 3</p>
+        </div>
+        <div class="galeri-item">
+            <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior4.jpg" alt="Hasil Karya 4">
+            <p>Karya 4</p>
+        </div>
+        <div class="galeri-item">
+            <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior5.jpg" alt="Hasil Karya 5">
+            <p>Karya 5</p>
+        </div>
+        <div class="galeri-item">
+            <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior6.jpg" alt="Hasil Karya 6">
+            <p>Karya 6</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
