@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Membuat Website di GitHub — Dari Nol Sampai Jadi</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif;}
+        body {background:#f8f9fa; color:#333; line-height:1.8; padding:20px; max-width:850px; margin:0 auto;}
+        h1 {text-align:center; color:#b8860b; margin-bottom:30px; font-size:1.8rem;}
+        h2 {color:#2c3e50; margin-top:40px; margin-bottom:15px; font-size:1.3rem; border-left:4px solid #b8860b; padding-left:12px;}
+        .peringatan {background:#fff3cd; border-left:5px solid #ffc107; padding:15px; margin:15px 0; border-radius:0 8px 8px 0;}
+        .catatan {background:#e3f2fd; border-left:5px solid #2196f3; padding:15px; margin:15px 0; border-radius:0 8px 8px 0;}
+        .langkah {background:#fff; border:1px solid #eee; border-radius:10px; padding:20px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+        kbd {background:#f4f4f4; border:1px solid #ddd; padding:2px 8px; border-radius:4px; font-family:monospace;}
+        code {background:#f4f4f4; padding:2px 6px; border-radius:4px; font-family:monospace; color:#c7254e;}
+        hr {border:none; border-top:2px dashed #ddd; margin:30px 0;}
+        .penutup {background:linear-gradient(135deg, #fff9e8, #fff); padding:25px; border-radius:12px; border:2px solid #f5e4b7; margin-top:40px; text-align:center;}
+    </style>
+</head>
+<body>
+
+<h1>🌐 Tutorial Membuat Website di GitHub</h1>
+<p style="text-align:center; color:#666; margin-bottom:40px;">Ditulis dari pengalaman: Dari tidak tahu sama sekali → sampai berhasil membuat website yang bisa dilihat seluruh dunia!</p>
+
+<div class="peringatan">
+    <strong>💡 Pesan Penulis:</strong> "Saya menulis tutorial ini karena saya pernah merasakan kebingungannya. Saya dulu tidak tahu apa-apa, merasa sulit, dan hampir menyerah. Tapi ternyata kalau pelan-pelan dan sabar, SEMUA PASTI BISA!"
+</div>
+
+<h2>📖 BAB 1 — APA ITU GITHUB?</h2>
+<div class="langkah">
+    <p><strong>GitHub</strong> itu adalah tempat di internet yang menyediakan ruang gratis untuk menyimpan kode dan membuat website.</p>
+    <p>Ibaratnya seperti <strong>lemari penyimpanan di internet</strong>. Kita taruh semua file website di dalamnya, lalu GitHub akan memajangkannya supaya orang lain bisa melihatnya.</p>
+    <p><strong>Siapa yang bisa pakai?</strong> Semua orang! Gratis! Tidak perlu bayar!</p>
+</div>
+
+<h2>📖 BAB 2 — CARA DAFTAR AKUN GITHUB</h2>
+<div class="langkah">
+    <p><strong>Langkah 1:</strong> Buka alamat <code>github.com</code> di browser</p>
+    <p><strong>Langkah 2:</strong> Klik tombol <kbd>Sign up</kbd> atau <kbd>Daftar</kbd></p>
+    <p><strong>Langkah 3:</strong> Isi alamat email, buat kata sandi, tulis nama pengguna kamu</p>
+    <p><strong>Langkah 4:</strong> Ikuti petunjuk verifikasi sampai selesai</p>
+    <p><strong>Langkah 5:</strong> Jika sudah masuk, kamu akan melihat halaman utama GitHub. Itu adalah "rumah" akunmu!</p>
+</div>
+
+<h2>📖 BAB 3 — MEMBUAT TEMPAT PENYIMPANAN WEBSITE</h2>
+<div class="langkah">
+    <p>Sebelum membuat halaman, kita harus membuat "kotak penyimpanan" dulu yang bernama <strong>Repository</strong>.</p>
+    <p><strong>Langkah 1:</strong> Klik tombol <kbd>New</kbd> atau <kbd>Create a new repository</kbd></p>
+    <p><strong>Langkah 2:</strong> Isi nama tempatnya. Contoh: <code>namaku-website</code></p>
+    <p><strong>Langkah 3:</strong> Pilih <kbd>Public</kbd> — supaya bisa dilihat semua orang</p>
+    <p><strong>Langkah 4:</strong> Centang kotak <kbd>Add a README file</kbd></p>
+    <p><strong>Langkah 5:</strong> Klik tombol <kbd>Create repository</kbd></p>
+    <div class="catatan">
+        <strong>⚠️ Catatan Penting:</strong> Nama tidak boleh pakai spasi! Gunakan tanda hubung <code>-</code> sebagai pemisah.
+    </div>
+</div>
+
+<h2>📖 BAB 4 — MEMBUAT HALAMAN UTAMA</h2>
+<div class="langkah">
+    <p>Website harus punya halaman utama yang bernama <code>index.html</code>. Ini adalah pintu masuk website kita.</p>
+    <p><strong>Langkah 1:</strong> Klik tulisan <kbd>Add file</kbd> → pilih <kbd>Create new file</kbd></p>
+    <p><strong>Langkah 2:</strong> Di kolom nama file, tuliskan persis: <code>index.html</code></p>
+    <p><strong>Langkah 3:</strong> Di kolom besar di bawahnya, tuliskan kode HTML-nya</p>
+    <p><strong>Langkah 4:</strong> Gulir ke bawah → klik tombol <kbd>Commit new file</kbd></p>
+</div>
+
+<h2>📖 BAB 5 — KODE HTML PALING DASAR</h2>
+<div class="langkah">
+    <p>Ini adalah kode paling sederhana yang wajib ada di setiap halaman website:</p>
+    <code>&lt;!DOCTYPE html&gt;</code><br>
+    <code>&lt;html&gt;</code><br>
+    <code>&lt;head&gt;</code><br>
+    <code>&lt;title&gt;Judul Website Saya&lt;/title&gt;</code><br>
+    <code>&lt;/head&gt;</code><br>
+    <code>&lt;body&gt;</code><br>
+    <code>&lt;h1&gt;Halo! Selamat Datang!&lt;/h1&gt;</code><br>
+    <code>&lt;p&gt;Ini website pertamaku!&lt;/p&gt;</code><br>
+    <code>&lt;/body&gt;</code><br>
+    <code>&lt;/html&gt;</code>
+    <br><br>
+    <p><strong>Penjelasan sederhananya:</strong></p>
+    <ul>
+        <li><code>&lt;html&gt;</code> = Awal dari semua halaman</li>
+        <li><code>&lt;head&gt;</code> = Bagian pengaturan halaman</li>
+        <li><code>&lt;title&gt;</code> = Nama yang muncul di tab browser</li>
+        <li><code>&lt;body&gt;</code> = Isi yang terlihat di halaman</li>
+        <li><code>&lt;h1&gt;</code> = Tulisan judul besar</li>
+        <li><code>&lt;p&gt;</code> = Tulisan paragraf biasa</li>
+    </ul>
+    <div class="peringatan">
+        <strong>⚠️ PENTING:</strong> Setiap tanda buka harus ada tanda tutupnya! Contoh: <code>&lt;html&gt;</code> harus ditutup dengan <code>&lt;/html&gt;</code>. Kalau kurang satu tanda, websitemu bisa rusak!
+    </div>
+</div>
+
+<h2>📖 BAB 6 — MEMASANG GAMBAR DI WEBSITE</h2>
+<div class="langkah">
+    <p><strong>Langkah 1:</strong> Klik <kbd>Add file</kbd> → <kbd>Upload files</kbd></p>
+    <p><strong>Langkah 2:</strong> Pilih gambar dari HP/Komputer kamu</p>
+    <p><strong>Langkah 3:</strong> Klik <kbd>Commit changes</kbd> → tunggu sampai selesai</p>
+    <p><strong>Langkah 4:</strong> Di kode HTML, tambahkan baris ini:</p>
+    <code>&lt;img src="nama-gambarmu.jpg" alt="Gambar Saya" style="width:100%;"&gt;</code>
+    <div class="peringatan">
+        <strong>⚠️ SANGAT PENTING:</strong> Nama di dalam tanda kutip HARUS SAMA PERSIS dengan nama file yang diupload! Termasuk huruf besar/kecil dan akhiran (.jpg / .png)! Kalau beda sedikit saja, gambarnya TIDAK AKAN MUNCUL!
+    </div>
+</div>
+
+<h2>📖 BAB 7 — MEMBUAT ALAMAT WEBSITE</h2>
+<div class="langkah">
+    <p>Supaya website bisa dibuka orang lain, kita harus mengaktifkan alamatnya dulu:</p>
+    <p><strong>Langkah 1:</strong> Di halaman tempat penyimpananmu, klik tab <kbd>Settings</kbd></p>
+    <p><strong>Langkah 2:</strong> Cari bagian tulisan <strong>Pages</strong> di menu sebelah kiri</p>
+    <p><strong>Langkah 3:</strong> Di bagian Source, pilih <kbd>Deploy from a branch</kbd></p>
+    <p><strong>Langkah 4:</strong> Di bagian Branch, ubah menjadi <kbd>main</kbd> → klik <kbd>Save</kbd></p>
+    <p><strong>Langkah 5:</strong> Tunggu beberapa menit ⏳ lalu kembali ke halaman Pages, nanti akan muncul alamat website seperti:</p>
+    <code>namamu.github.io/namanya</code>
+    <p><strong>✅ Itu alamat websitemu! Bisa dibuka dari mana saja di seluruh dunia!</strong> 🌍</p>
+</div>
+
+<h2>📖 BAB 8 — MASALAH YANG SERING TERJADI</h2>
+<div class="langkah">
+    <p><strong>❌ Gambar tidak muncul?</strong> → Cek nama di kode dan nama file di GitHub. HARUS SAMA PERSIS!</p>
+    <p><strong>❌ Tampilan berantakan?</strong> → Cek tanda kurung dan tanda kutip, jangan ada yang kurang!</p>
+    <p><strong>❌ Alamat belum muncul?</strong> → Tunggu 2-3 menit, kadang GitHub butuh waktu untuk memperbarui!</p>
+    <p><strong>❌ Sudah diubah tapi belum berubah?</strong> → Tekan tombol segitiga di pojok kanan atas browser → pilih "Muat Ulang" atau tarik layar ke bawah!</p>
+</div>
+
+<div class="penutup">
+    <h2>💛 PENUTUP — PESAN DARI PENULIS</h2>
+    <p style="font-size:1.1rem;">"Saya menulis tutorial ini karena saya pernah merasakan <strong>bingung, merasa tidak bisa, dan hampir menyerah</strong>. Tapi ternyata kuncinya hanya satu: <strong>SABAR DAN PELAN-PELAN.</strong></p>
+    <p>Setiap orang yang sekarang pintar, <strong>AWALNYA JUGA TIDAK TAHU APA-APA.</strong> Jangan pernah merasa bodoh hanya karena belum paham. Yang membedakan orang yang berhasil dan yang tidak adalah: <strong>SIAPA YANG TETAP MAU MENCOBA DAN TIDAK MENYERAH.</strong></p>
+    <p>Kalau saya bisa, <strong>KAMU PASTI BISA JUGA!</strong> 💪🔥"</p>
+    <br><br>
+    <p style="color:#b8860b; font-weight:bold; font-size:1.1rem;">Semoga bermanfaat untuk semua pemula yang ingin belajar</p>
+    <br><br><br>
+    <p style="font-size:2rem; font-family:'Segoe Script', cursive; color:#2c3e50; letter-spacing:2px; font-style:italic;">
+        Ikromwalidaini
+    </p>
+    <hr style="border:none; border-bottom:2px solid #b8860b; width:220px; margin:8px auto;">
+    <p style="color:#777; font-size:0.95rem;">✍️ Ikromwalidaini</p>
+</div>
+
+</body>
+</html>
