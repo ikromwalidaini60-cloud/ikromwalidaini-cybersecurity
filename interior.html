@@ -12,11 +12,11 @@
             line-height: 1.6;
         }
 
-        /* === HEADER TETAP SESUAI ASLI DENGAN LOGO === */
+        /* === HEADER — TETAP PERSIS SESUAI KLIEN === */
         header {
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            background: #000;
             color: #fff;
-            padding: 30px 20px;
+            padding: 25px 20px;
             text-align: center;
         }
         .logo-container {
@@ -24,25 +24,27 @@
             z-index: 1;
         }
         header img {
-            max-height: 120px;
-            width: auto;
-            margin-bottom: 12px;
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
         }
         header h1 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            letter-spacing: 3px;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
             color: #D4AF37;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            font-weight: 700;
         }
         header p {
-            font-size: 1rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
             color: #F5DEB3;
-            letter-spacing: 1px;
+        }
+        header p span {
+            margin: 0 8px;
         }
 
-        /* === NAVIGASI — DITAMBAH MENU BARU, TAMPILAN TETAP SAMA === */
+        /* === NAVIGASI — TETAP TAMPILAN ASLI + BERFUNGSI === */
         nav {
             background: #fff;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -58,15 +60,17 @@
         }
         nav ul li a {
             display: block;
-            padding: 14px 20px;
+            padding: 14px 18px;
             text-decoration: none;
             color: #8B4513;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s;
         }
         nav ul li a:hover, nav ul li a.active {
             background: #D4AF37;
             color: #fff;
+            border-radius: 6px;
         }
 
         section {
@@ -83,10 +87,22 @@
         }
         .hero {
             text-align: center;
-            padding: 50px 20px;
+            padding: 30px 20px 50px;
         }
-        .hero h2 {font-size: 2rem; border: none; color: #B8860B;}
-        .btn {
+        .hero h2 {
+            font-size: 2.5rem;
+            border: none;
+            color: #D4AF37;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            color: #555;
+        }
+        .wa-btn {
             display: inline-block;
             background: linear-gradient(90deg, #25D366, #128C7E);
             color: #fff;
@@ -95,46 +111,74 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            margin-top: 20px;
             transition: transform 0.3s;
         }
-        .btn:hover {transform: scale(1.05);}
+        .wa-btn:hover {transform: scale(1.05);}
 
-        .layanan-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 22px;
-            margin-bottom: 18px;
-            box-shadow: 0 3px 10px rgba(139,69,19,0.1);
-            cursor: pointer;
-            transition: all 0.3s;
+        /* === TOMBOL LIPAT LAYANAN === */
+        .layanan-item {
+            margin-bottom: 12px;
         }
-        .layanan-card:hover {box-shadow: 0 5px 20px rgba(139,69,19,0.15);}
-        .layanan-card h3 {color: #8B4513; margin-bottom: 10px;}
-        .layanan-desc {display: none; margin-top: 12px; color: #555;}
+        .layanan-toggle {
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.05rem;
+            box-shadow: 0 3px 8px rgba(184,134,11,0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .layanan-toggle .icon {
+            transition: transform 0.3s;
+        }
+        .layanan-toggle.active .icon {
+            transform: rotate(180deg);
+        }
+        .layanan-content {
+            display: none;
+            padding: 18px 20px;
+            background: #fff9e8;
+            border: 1px solid #f5e4b7;
+            border-radius: 0 0 10px 10px;
+            margin-top: -2px;
+        }
+        .layanan-content.show {
+            display: block;
+        }
 
-        /* === GALERI — SIAP 40 GAMBAR === */
+        /* === GALERI === */
+        .galeri-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 15px;
+        }
+        .galeri-section h2 {
+            text-align: center;
+            color: #b8860b;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            border-bottom: none;
+        }
+        .galeri-section .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
         .galeri-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            gap: 20px;
         }
-        .galeri-item {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-        .galeri-item:hover {transform: translateY(-3px);}
-        .galeri-item img {
+        .galeri-grid img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: #f5f5f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            height: auto;
         }
-        .galeri-item h4 {padding: 10px 15px 5px; color: #8B4513; font-size: 1rem;}
-        .galeri-item p {padding: 0 15px 12px; font-size: 0.9rem; color: #666;}
 
         /* === PORTOFOLIO === */
         .portofolio-box {
@@ -152,49 +196,79 @@
         }
         .portofolio-list li strong {color: #8B4513;}
 
-        .kontak-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .kontak-card {
+        /* === WILAYAH === */
+        .wilayah-box {
             background: #fff;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 12px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
-        .kontak-card h4 {color: #8B4513; margin-bottom: 10px;}
+        .wilayah-box h3 {color: #8B4513; margin-bottom: 15px;}
+        .wilayah-box p {font-size: 1.1rem; margin-bottom: 8px;}
+
+        /* === KONTAK === */
+        .wa-link {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: #fff;
+            border-radius: 8px;
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .wa-link:hover {
+            background: #f0fff4;
+            transform: translateX(5px);
+        }
+        .alamat-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff9e8, #fff);
+            border-radius: 12px;
+            border: 2px solid #f5e4b7;
+        }
+        .alamat-box p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .alamat-box span {
+            font-size: 1.3rem;
+            color: #b8860b;
+        }
 
         footer {
-            background: #1a1a1a;
+            background: #000;
             color: #fff;
             text-align: center;
             padding: 25px;
             margin-top: 50px;
         }
-        footer strong {color: #D4AF37; font-size: 1.1rem;}
+        footer strong {color: #D4AF37;}
 
         @media (max-width: 768px) {
             nav ul li a {padding: 12px 14px; font-size: 0.95rem;}
             section {padding: 30px 15px;}
-            .galeri-grid {grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));}
-            header h1 {font-size: 1.6rem;}
-            header img {max-height: 90px;}
+            header h1 {font-size: 1.8rem;}
+            .hero h2 {font-size: 2rem;}
         }
     </style>
 </head>
 <body>
 
-<!-- LOGO TETAP SESUAI KLIEN -->
+<!-- ✅ HEADER — TETAP PERSIS SESUAI KLIEN -->
 <header>
     <div class="logo-container">
         <img src="logo.png" alt="RUANG KARYA — Interior & Custom Furniture">
         <h1>RUANG KARYA</h1>
-        <p>✨ Interior & Custom Furniture — Wujudkan Ruang Impianmu! ✨</p>
+        <p><span>✨</span> Interior & Custom Furniture — Wujudkan Ruang Impianmu! <span>✨</span></p>
     </div>
 </header>
 
-<!-- MENU TAMBAHAN: GALERI & PORTOFOLIO, TAMPILAN TETAP SAMA -->
+<!-- ✅ MENU NAVIGASI — SEMUA BERFUNGSI DIKLIK! -->
 <nav>
     <ul>
         <li><a href="#beranda" class="active">🏠 Beranda</a></li>
@@ -207,175 +281,226 @@
 </nav>
 
 <!-- ===================================== -->
-<!-- BAGIAN UTAMA -->
+<!-- 🏠 BERANDA -->
 <!-- ===================================== -->
-<section id="beranda">
-    <div class="hero">
-        <h2>Wujudkan Ruang Impianmu!</h2>
-        <p>Desain interior & furnitur khusus untuk Rumah, Kantor, dan Toko. Elegan, Rapi, Berkualitas!</p>
-        <a href="https://wa.me/6282171689496" class="wa-btn">📲 Konsultasi Gratis via WhatsApp</a>
-    </div>
+<section id="beranda" class="hero">
+    <h2>Wujudkan Ruang Impianmu!</h2>
+    <p>Desain interior & furnitur khusus untuk Rumah, Kantor, dan Toko. Elegan, Rapi, dan Berkualitas!</p>
+    <a href="https://wa.me/6282171689496" target="_blank" class="wa-btn">📲 Konsultasi Gratis via WhatsApp</a>
 </section>
 
 <!-- ===================================== -->
-<!-- 🛠️ LAYANAN KAMI -->
+<!-- 🛋️ LAYANAN KAMI — TOMBOL LIPAT BERFUNGSI! -->
 <!-- ===================================== -->
-<section>
+<section id="layanan">
     <h2>🛋️ Layanan Kami</h2>
 
-    <!-- LAYANAN 1 -->
-    <div style="margin-bottom: 12px;">
-        <div onclick="toggleLayanan('l1')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
-            ✅ Desain & Pembuatan Interior Rumah <span style="float:right;">▼</span>
+    <div class="layanan-item">
+        <div class="layanan-toggle" onclick="toggleLayanan(this)">
+            <span>✅ Desain & Pembuatan Interior Rumah</span>
+            <span class="icon">▼</span>
         </div>
-        <div id="l1" style="display: none; padding: 18px 20px; background: #fff9e8; border: 1px solid #f5e4b7; border-radius: 0 0 10px 10px; margin-top: -2px;">
+        <div class="layanan-content">
             Desain interior rumah sesuai selera dan kebutuhan Anda, ruangan terlihat mewah, rapi, dan nyaman.
         </div>
     </div>
 
-    <!-- LAYANAN 2 -->
-    <div style="margin-bottom: 12px;">
-        <div onclick="toggleLayanan('l2')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
-            ✅ Custom Furniture Sesuai Keinginan <span style="float:right;">▼</span>
+    <div class="layanan-item">
+        <div class="layanan-toggle" onclick="toggleLayanan(this)">
+            <span>✅ Custom Furniture Sesuai Keinginan</span>
+            <span class="icon">▼</span>
         </div>
-        <div id="l2" style="display: none; padding: 18px 20px; background: #fff9e8; border: 1px solid #f5e4b7; border-radius: 0 0 10px 10px; margin-top: -2px;">
+        <div class="layanan-content">
             Lemari, meja, rak, dan perabot lainnya dibuat khusus sesuai ukuran, model, dan selera Anda. Disesuaikan dengan ruangan Anda.
         </div>
     </div>
 
-    <!-- LAYANAN 3 -->
-    <div style="margin-bottom: 12px;">
-        <div onclick="toggleLayanan('l3')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
-            ✅ Interior Kantor & Ruang Kerja <span style="float:right;">▼</span>
+    <div class="layanan-item">
+        <div class="layanan-toggle" onclick="toggleLayanan(this)">
+            <span>✅ Interior Kantor & Ruang Kerja</span>
+            <span class="icon">▼</span>
         </div>
-        <div id="l3" style="display: none; padding: 18px 20px; background: #fff9e8; border: 1px solid #f5e4b7; border-radius: 0 0 10px 10px; margin-top: -2px;">
+        <div class="layanan-content">
             Tata ruang kantor agar rapi, terlihat profesional, dan nyaman untuk bekerja setiap hari.
         </div>
     </div>
 
-    <!-- LAYANAN 4 -->
-    <div style="margin-bottom: 12px;">
-        <div onclick="toggleLayanan('l4')" style="background: linear-gradient(90deg, #d4af37, #b8860b); color: #fff; padding: 14px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1.05rem; box-shadow: 0 3px 8px rgba(184,134,11,0.25);">
-            ✅ Interior Toko & Tempat Usaha <span style="float:right;">▼</span>
+    <div class="layanan-item">
+        <div class="layanan-toggle" onclick="toggleLayanan(this)">
+            <span>✅ Interior Toko & Tempat Usaha</span>
+            <span class="icon">▼</span>
         </div>
-        <div id="l4" style="display: none; padding: 18px 20px; background: #fff9e8; border: 1px solid #f5e4b7; border-radius: 0 0 10px 10px; margin-top: -2px;">
+        <div class="layanan-content">
             Penataan toko & tempat usaha agar menarik, rapi, dan membuat pelanggan betah berkunjung.
         </div>
     </div>
-
 </section>
 
-<!-- ✅ KODE TOMBOL LIPAT (WAJIB ADA DI BAWAH!) -->
-<script>
-function toggleLayanan(id) {
-  const box = document.getElementById(id);
-  if (box.style.display === 'none' || box.style.display === '') {
-    box.style.display = 'block';
-  } else {
-    box.style.display = 'none';
-  }
-}
-</script>
-        
-</script>
 <!-- ===================================== -->
-<!-- 📸 INILAH HASIL KARYA KAMI -->
+<!-- 📸 GALERI — HASIL KARYA -->
 <!-- ===================================== -->
-<section style="margin: 40px 15px;">
-    <h2 style="text-align: center; color: #b8860b; margin-bottom: 25px; font-size: 1.6rem;">
-        📸 Inilah Hasil Karya Kami
-    </h2>
-    <p style="text-align: center; color: #555; margin-bottom: 30px; font-size: 1rem;">
-        Karya terbaik kami untuk mewujudkan ruangan impian Anda
-    </p>
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior1.jpg" alt="" style="width:100%; border-radius:12px;">
+<section id="galeri" class="galeri-section">
+    <h2>📸 Inilah Hasil Karya Kami</h2>
+    <p class="intro">Karya terbaik kami untuk mewujudkan ruangan impian Anda</p>
     
-    <div style="display: grid; gap: 20px;">
-        <!-- Dari interior2 sampai interior18 -->
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior2.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior3.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior4.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior5.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior6.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior7.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior8.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior9.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior10.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior11.png" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior12.png" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior13.png" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior14.png" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior15.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior16.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior17.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior18.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-
-        <!-- Tambahan interior19 sampai interior26 -->
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior19.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior20.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior21.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior22.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior23.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior24.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior25.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior26.jpg" alt="" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    
+    <div class="galeri-grid">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior1.jpg" alt="Hasil Karya 1">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior2.jpg" alt="Hasil Karya 2">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior3.jpg" alt="Hasil Karya 3">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior4.jpg" alt="Hasil Karya 4">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior5.jpg" alt="Hasil Karya 5">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior6.jpg" alt="Hasil Karya 6">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior7.jpg" alt="Hasil Karya 7">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior8.jpg" alt="Hasil Karya 8">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior9.jpg" alt="Hasil Karya 9">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior10.jpg" alt="Hasil Karya 10">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior11.png" alt="Hasil Karya 11">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior12.png" alt="Hasil Karya 12">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior13.png" alt="Hasil Karya 13">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior14.png" alt="Hasil Karya 14">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior15.jpg" alt="Hasil Karya 15">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior16.jpg" alt="Hasil Karya 16">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior17.jpg" alt="Hasil Karya 17">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior18.jpg" alt="Hasil Karya 18">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior19.jpg" alt="Hasil Karya 19">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior20.jpg" alt="Hasil Karya 20">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior21.jpg" alt="Hasil Karya 21">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior22.jpg" alt="Hasil Karya 22">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior23.jpg" alt="Hasil Karya 23">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior24.jpg" alt="Hasil Karya 24">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior25.jpg" alt="Hasil Karya 25">
+        <img src="https://ikromwalidaini60-cloud.github.io/ikromwalidaini-cybersecurity/interior26.jpg" alt="Hasil Karya 26">
     </div>
 </section>
 
 <!-- ===================================== -->
+<!-- 📂 PORTOFOLIO -->
+<!-- ===================================== -->
+<section id="portofolio">
+    <h2>📂 Portofolio — Profil & Pengalaman</h2>
 
+    <div class="portofolio-box">
+        <h3>👤 Tentang Kami</h3>
+        <p>
+            <strong>RUANG KARYA</strong> adalah tim spesialis di bidang desain interior dan pembuatan furnitur kustom. 
+            Kami berfokus pada hasil yang rapi, kuat, dan sesuai dengan keinginan serta anggaran Anda.
+        </p>
+    </div>
+
+    <div class="portofolio-box">
+        <h3>🛠️ Keahlian & Layanan</h3>
+        <ul class="portofolio-list">
+            <li>✅ <strong>Desain Interior:</strong> Rumah, Kantor, Toko, Kafe</li>
+            <li>✅ <strong>Custom Furniture:</strong> Lemari, Meja, Rak, Tempat Tidur, dll</li>
+            <li>✅ <strong>Renovasi & Penataan Ulang:</strong> Ruang tamu, kamar, dapur</li>
+            <li>✅ <strong>Konsultasi Desain:</strong> Gratis, bantu wujudkan ide Anda</li>
+        </ul>
+    </div>
+
+    <div class="portofolio-box">
+        <h3>💻 Software & Bahan yang Digunakan</h3>
+        <ul class="portofolio-list">
+            <li>✅ <strong>Desain 3D:</strong> SketchUp, AutoCAD — lihat hasil sebelum dibuat</li>
+            <li>✅ <strong>Bahan Berkualitas:</strong> Multiplek, Kayu, HPL, Cat Duco</li>
+            <li>✅ <strong>Pengerjaan Rapi:</strong> Detail, kuat, dan rapi di setiap sudut</li>
+        </ul>
+    </div>
+
+    <div class="portofolio-box">
+        <h3>📋 Jenis Proyek</h3>
+        <ul class="portofolio-list">
+            <li>🏠 Rumah Tinggal — seluruh ruangan</li>
+            <li>🏢 Kantor & Ruang Kerja</li>
+            <li>🏪 Toko & Tempat Usaha</li>
+            <li>☕ Kafe & Restoran</li>
+            <li>🏡 Apartemen & Kost</li>
+        </ul>
+    </div>
+</section>
 
 <!-- ===================================== -->
-<!-- WILAYAH JANGKAUAN -->
+<!-- 📍 WILAYAH JANGKAUAN -->
 <!-- ===================================== -->
 <section id="wilayah">
     <h2>📍 Wilayah Jangkauan Layanan</h2>
     <div class="wilayah-box">
         <h3>🏡 Melayani Wilayah:</h3>
-        <p><strong>✅ Jabodetabek</strong> (Jakarta, Bogor, Depok, Tangerang, Bekasi)</p>
+        <p><strong>✅ Jabodetabek</strong> — Jakarta, Bogor, Depok, Tangerang, Bekasi</p>
         <p><strong>✅ Pekanbaru</strong> — Riau</p>
         <br>
-        <p>📍 Alamat: Pamulang, Tangerang Selatan</p>
+        <p>📍 <strong>Alamat:</strong> Pamulang, Tangerang Selatan</p>
     </div>
 </section>
 
 <!-- ===================================== -->
-<!-- KONTAK — 3 TOMBOL WHATSAPP -->
+<!-- 📞 KONTAK -->
 <!-- ===================================== -->
 <section id="kontak">
     <h2>📞 Hubungi Kami</h2>
-    <div class="contact-box">
-        <p style="font-size: 1.1rem; margin-bottom: 18px;"><strong>📲 Klik untuk Konsultasi Langsung:</strong></p>
+    <p style="font-size: 1.1rem; margin-bottom: 20px;"><strong>📲 Klik untuk Konsultasi Langsung:</strong></p>
 
-        <a href="https://wa.me/6282171689496" class="wa-link"> 💬 +62 821-7168-9496 — Iqbal</a>
-<a href="https://wa.me/6285210225089" class="wa-link"> 💬 +62 852-1022-5089 — Pitra</a>
-<a href="https://wa.me/628111322121" class="wa-link"> 💬 +62 811-1322-121 — Rangga</a>
-<a href="https://wa.me/6282268808054" class="wa-link"> 💬 +62 822-6880-8054 — Riswan</a>
+    <a href="https://wa.me/6282171689496" target="_blank" class="wa-link">💬 +62 821-7168-9496 — Iqbal</a>
+    <a href="https://wa.me/6285210225089" target="_blank" class="wa-link">💬 +62 852-1022-5089 — Pitra</a>
+    <a href="https://wa.me/628111322121" target="_blank" class="wa-link">💬 +62 811-1322-121 — Rangga</a>
+    <a href="https://wa.me/6282268808054" target="_blank" class="wa-link">💬 +62 822-6880-8054 — Riswan</a>
 
-        <br>
-        <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, #fff9e8, #fff); border-radius: 12px; border: 2px solid #f5e4b7;">
-    <p style="font-size: 1.25rem; font-weight: 600; color: #2c3e50; margin-bottom: 15px;">
-        📍 <strong>Alamat:</strong><br>
-        <span style="font-size: 1.3rem; color: #b8860b;">Pamulang, Tangerang Selatan</span>
-    </p>
-    <p style="font-size: 1.25rem; font-weight: 600; color: #2c3e50;">
-        🌐 <strong>Wilayah Jangkauan:</strong><br>
-        <span style="font-size: 1.3rem; color: #b8860b;">Jabodetabek & Pekanbaru</span>
-    </p>
-</div>
-
-        
+    <div class="alamat-box">
+        <p>📍 <strong>Alamat:</strong><br>
+        <span>Pamulang, Tangerang Selatan</span></p>
+        <p>🌐 <strong>Wilayah Jangkauan:</strong><br>
+        <span>Jabodetabek & Pekanbaru</span></p>
+    </div>
 </section>
 
 <!-- ===================================== -->
-<!-- BAWAH HALAMAN -->
+<!-- FOOTER -->
 <!-- ===================================== -->
 <footer>
-    <p>🏠 RUANG KARYA — Interior & Custom Furniture | Pamulang, Tangerang Selatan</p>
-    <p>Melayani: Jabodetabek & Pekanbaru</p>
+    <p><strong>RUANG KARYA</strong> — Interior & Custom Furniture | Pamulang, Tangerang Selatan</p>
+    <p style="margin-top: 8px;">Melayani: Jabodetabek & Pekanbaru</p>
 </footer>
+
+<!-- ===================================== -->
+✅ JAVASCRIPT — TOMBOL LIPAT & MENU AKTIF SCROLL
+<!-- ===================================== -->
+<script>
+    // Fungsi Tombol Lipat Layanan
+    function toggleLayanan(toggleBtn) {
+        const content = toggleBtn.nextElementSibling;
+        const icon = toggleBtn.querySelector('.icon');
+        
+        toggleBtn.classList.toggle('active');
+        
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            icon.textContent = '▼';
+        } else {
+            content.classList.add('show');
+            icon.textContent = '▲';
+        }
+    }
+
+    // Menu Aktif Saat Scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(sec => {
+            const top = sec.offsetTop - 150;
+            if (window.scrollY >= top) {
+                current = sec.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
-
