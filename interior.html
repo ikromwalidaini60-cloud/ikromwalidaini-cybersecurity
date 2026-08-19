@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruang Karya — Interior & Custom Furniture</title>
+    <title>RUANG KARYA — Interior & Custom Furniture</title>
     <style>
         * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Roboto, Arial, sans-serif;}
         body {
@@ -11,135 +11,199 @@
             color: #2c3e50;
             line-height: 1.6;
         }
+
+        /* === HEADER TETAP SESUAI ASLI DENGAN LOGO === */
         header {
             background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
             color: #fff;
-            padding: 30px 25px;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-        .logo {
-            max-width: 180px;
+        .logo-container {
+            position: relative;
+            z-index: 1;
+        }
+        header img {
+            max-height: 120px;
+            width: auto;
             margin-bottom: 12px;
         }
-        header h1 {font-size: 2rem; margin-bottom: 8px; color: #d4af37; letter-spacing: 2px;}
-        header p {opacity: 0.9; font-size: 1.05rem; color: #e0e0e0;}
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+            color: #D4AF37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #F5DEB3;
+            letter-spacing: 1px;
+        }
 
+        /* === NAVIGASI — DITAMBAH MENU BARU, TAMPILAN TETAP SAMA === */
         nav {
-            background: #ffffff;
-            padding: 14px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.15);
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
-            z-index: 99;
+            z-index: 100;
         }
-        nav a {
-            color: #b8860b;
-            margin: 0 12px;
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav ul li a {
+            display: block;
+            padding: 14px 20px;
             text-decoration: none;
+            color: #8B4513;
             font-weight: 600;
             transition: all 0.3s;
         }
-        nav a:hover {color: #d4af37; text-decoration: underline;}
-
-        section {padding: 35px 20px; max-width: 1000px; margin: 0 auto;}
-        h2 {
-            color: #b8860b;
-            text-align: center;
-            margin-bottom: 28px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid;
-            border-image: linear-gradient(to right, #d4af37, #8b4513) 1;
+        nav ul li a:hover, nav ul li a.active {
+            background: #D4AF37;
+            color: #fff;
         }
 
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            color: #8B4513;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #D2B48C;
+        }
         .hero {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(44, 44, 44, 0.9)), 
-                        url('https://via.placeholder.com/1000x400') center/cover no-repeat;
-            border-radius: 16px;
-            padding: 85px 25px;
             text-align: center;
-            color: #fff;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            padding: 50px 20px;
         }
-        .hero h2 {border: none; color: #d4af37; font-size: 2.1rem; text-shadow: 0 2px 8px rgba(0,0,0,0.3);}
-        .hero p {font-size: 1.15rem; margin: 18px 0 30px; color: #f0f0f0;}
-
-        .wa-btn {
+        .hero h2 {font-size: 2rem; border: none; color: #B8860B;}
+        .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background: linear-gradient(90deg, #25D366, #128C7E);
             color: #fff;
-            padding: 14px 30px;
+            padding: 14px 28px;
             border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            transition: transform 0.3s;
         }
-        .wa-btn:hover {transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);}
+        .btn:hover {transform: scale(1.05);}
 
-        .wilayah-box {
-            background: linear-gradient(135deg, #fff, #fdf8e8);
-            padding: 25px;
+        .layanan-card {
+            background: #fff;
             border-radius: 12px;
-            text-align: center;
-            margin: 20px 0;
-            border: 2px solid #f5e4b7;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 10px rgba(139,69,19,0.1);
+            cursor: pointer;
+            transition: all 0.3s;
         }
-        .wilayah-box h3 {color: #b8860b; margin-bottom: 12px;}
+        .layanan-card:hover {box-shadow: 0 5px 20px rgba(139,69,19,0.15);}
+        .layanan-card h3 {color: #8B4513; margin-bottom: 10px;}
+        .layanan-desc {display: none; margin-top: 12px; color: #555;}
 
-        .contact-box {
-            background: linear-gradient(135deg, #fff, #fdf8e8);
-            padding: 30px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: 0 5px 18px rgba(212, 175, 55, 0.15);
-            border: 2px solid #f5e4b7;
+        /* === GALERI — SIAP 40 GAMBAR === */
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
         }
-        .wa-link {
-            display:block; 
-            background: linear-gradient(90deg, #25D366, #128C7E); 
-            color:#fff; 
-            padding:12px 20px; 
-            border-radius:10px; 
-            text-decoration:none; 
-            font-weight:bold; 
-            margin-bottom:10px; 
-            text-align:center;
-            transition: transform 0.2s;
+        .galeri-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
         }
-        .wa-link:hover {transform: scale(1.02);}
+        .galeri-item:hover {transform: translateY(-3px);}
+        .galeri-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f5f5f5;
+        }
+        .galeri-item h4 {padding: 10px 15px 5px; color: #8B4513; font-size: 1rem;}
+        .galeri-item p {padding: 0 15px 12px; font-size: 0.9rem; color: #666;}
+
+        /* === PORTOFOLIO === */
+        .portofolio-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(139,69,19,0.1);
+        }
+        .portofolio-box h3 {color: #8B4513; margin-bottom: 15px; font-size: 1.4rem;}
+        .portofolio-list {list-style: none;}
+        .portofolio-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        .portofolio-list li strong {color: #8B4513;}
+
+        .kontak-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .kontak-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .kontak-card h4 {color: #8B4513; margin-bottom: 10px;}
 
         footer {
-            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-            color: #d4af37;
+            background: #1a1a1a;
+            color: #fff;
             text-align: center;
-            padding: 22px;
-            margin-top: 30px;
+            padding: 25px;
+            margin-top: 50px;
+        }
+        footer strong {color: #D4AF37; font-size: 1.1rem;}
+
+        @media (max-width: 768px) {
+            nav ul li a {padding: 12px 14px; font-size: 0.95rem;}
+            section {padding: 30px 15px;}
+            .galeri-grid {grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));}
+            header h1 {font-size: 1.6rem;}
+            header img {max-height: 90px;}
         }
     </style>
 </head>
 <body>
 
-<!-- ===================================== -->
-<!-- HEADER DENGAN LOGO -->
-<!-- ===================================== -->
+<!-- LOGO TETAP SESUAI KLIEN -->
 <header>
-    <img src="IMG-20260813-WA0002.jpg" alt="Ruang Karya — Interior & Custom Furniture" class="logo">
-    
-    <h1>RUANG KARYA</h1>
-    <p>✨ Interior & Custom Furniture ✨</p>
+    <div class="logo-container">
+        <img src="logo.png" alt="RUANG KARYA — Interior & Custom Furniture">
+        <h1>RUANG KARYA</h1>
+        <p>✨ Interior & Custom Furniture — Wujudkan Ruang Impianmu! ✨</p>
+    </div>
 </header>
 
-<!-- ===================================== -->
-<!-- MENU -->
-<!-- ===================================== -->
+<!-- MENU TAMBAHAN: GALERI & PORTOFOLIO, TAMPILAN TETAP SAMA -->
 <nav>
-    <a href="#beranda">🏠 Beranda</a>
-    <a href="#layanan">🛋️ Layanan</a>
-    <a href="#wilayah">📍 Wilayah</a>
-    <a href="#kontak">📞 Kontak</a>
+    <ul>
+        <li><a href="#beranda" class="active">🏠 Beranda</a></li>
+        <li><a href="#layanan">🛋️ Layanan</a></li>
+        <li><a href="#galeri">📸 Galeri</a></li>
+        <li><a href="#portofolio">📂 Portofolio</a></li>
+        <li><a href="#wilayah">📍 Wilayah</a></li>
+        <li><a href="#kontak">📞 Kontak</a></li>
+    </ul>
 </nav>
 
 <!-- ===================================== -->
