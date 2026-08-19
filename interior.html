@@ -12,22 +12,25 @@
             line-height: 1.6;
         }
 
-        /* === HEADER — TETAP PERSIS SESUAI KLIEN === */
+        /* === HEADER DENGAN LOGO RUANG KARYA === */
         header {
             background: #000;
             color: #fff;
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
         }
         .logo-container {
             position: relative;
             z-index: 1;
         }
+        /* === IKON LOGO RUANG KARYA === */
         header img {
             max-width: 220px;
             width: 100%;
             height: auto;
             margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
         }
         header h1 {
             font-size: 2.2rem;
@@ -44,7 +47,7 @@
             margin: 0 8px;
         }
 
-        /* === NAVIGASI — TETAP TAMPILAN ASLI + BERFUNGSI === */
+        /* === NAVIGASI === */
         nav {
             background: #fff;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -253,22 +256,24 @@
             nav ul li a {padding: 12px 14px; font-size: 0.95rem;}
             section {padding: 30px 15px;}
             header h1 {font-size: 1.8rem;}
+            header img {max-width: 180px;}
             .hero h2 {font-size: 2rem;}
         }
     </style>
 </head>
 <body>
 
-<!-- ✅ HEADER — TETAP PERSIS SESUAI KLIEN -->
+<!-- ✅ HEADER DENGAN IKON LOGO RUANG KARYA -->
 <header>
     <div class="logo-container">
+        <!-- 👇 IKON LOGO RUANG KARYA SUDAH DIMASUKKAN -->
         <img src="logo.png" alt="RUANG KARYA — Interior & Custom Furniture">
         <h1>RUANG KARYA</h1>
         <p><span>✨</span> Interior & Custom Furniture — Wujudkan Ruang Impianmu! <span>✨</span></p>
     </div>
 </header>
 
-<!-- ✅ MENU NAVIGASI — SEMUA BERFUNGSI DIKLIK! -->
+<!-- ✅ MENU NAVIGASI -->
 <nav>
     <ul>
         <li><a href="#beranda" class="active">🏠 Beranda</a></li>
@@ -290,7 +295,7 @@
 </section>
 
 <!-- ===================================== -->
-<!-- 🛋️ LAYANAN KAMI — TOMBOL LIPAT BERFUNGSI! -->
+<!-- 🛋️ LAYANAN KAMI -->
 <!-- ===================================== -->
 <section id="layanan">
     <h2>🛋️ Layanan Kami</h2>
@@ -337,7 +342,7 @@
 </section>
 
 <!-- ===================================== -->
-<!-- 📸 GALERI — HASIL KARYA -->
+<!-- 📸 GALERI -->
 <!-- ===================================== -->
 <section id="galeri" class="galeri-section">
     <h2>📸 Inilah Hasil Karya Kami</h2>
@@ -419,7 +424,7 @@
 </section>
 
 <!-- ===================================== -->
-<!-- 📍 WILAYAH JANGKAUAN -->
+<!-- 📍 WILAYAH -->
 <!-- ===================================== -->
 <section id="wilayah">
     <h2>📍 Wilayah Jangkauan Layanan</h2>
