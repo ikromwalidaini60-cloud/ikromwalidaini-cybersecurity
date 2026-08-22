@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odometer OTP — Enter Your Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .otp-container {
+            background: #1e293b;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .otp-title {
+            color: #94a3b8;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .otp-subtitle {
+            color: #f8fafc;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 35px;
+        }
+
+        .otp-input-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .odo-root {
+            width: 55px;
+            height: 70px;
+            background: #0f172a;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .odo-wrapper {
+            position: absolute;
+            width: 100%;
+            transition: transform 0.3s ease-out;
+        }
+
+        .odo-digit {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #facc15;
+            font-size: 32px;
+            font-weight: 700;
+            font-family: monospace;
+        }
+
+        .otp-hint {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .btn-start {
+            margin-top: 30px;
+            padding: 14px 40px;
+            background: linear-gradient(90deg, #facc15, #eab308);
+            color: #0f172a;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-start:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="otp-container">
+    <p class="otp-title">Transfer Approval</p>
+    <h2 class="otp-subtitle">Enter your code</h2>
+    
+    <div class="otp-input-wrapper" id="otp-boxes">
+        <!-- 6 Kotak Odometer -->
+        <div class="odo-root" data-target="1"></div>
+        <div class="odo-root" data-target="5"></div>
+        <div class="odo-root" data-target="0"></div>
+        <div class="odo-root" data-target="8"></div>
+        <div class="odo-root" data-target="3"></div>
+        <div class="odo-root" data-target="9"></div>
+    </div>
+    
+    <p class="otp-hint">• Enter the 6-digit code. Try 947261</p>
+    
+    <button class="btn-start" onclick="startOdometer()">▶️ Play Animation</button>
+</div>
+
+<script>
+// INISIALISASI ODOMETER SAAT HALAMAN DIBUKA
+document.addEventListener('DOMContentLoaded', function() {
+    initOdometer();
+});
+
+function initOdometer() {
+    const roots = document.querySelectorAll('.odo-root');
+    
+    roots.forEach(root => {
+        const target = parseInt(root.getAttribute('data-target'));
+        root.innerHTML = createOdometerHTML(target);
+    });
+}
+
+function createOdometerHTML(target) {
+    let digits = '';
+    // Buat angka 0-9 berulang 2x supaya animasi berputar halus
+    for (let i = 0; i < 2; i++) {
+        for (let d = 0; d <= 9; d++) {
+            digits += `<div class="odo-digit">${d}</div>`;
+        }
+    }
+    return `<div class="odo-wrapper">${digits}</div>`;
+}
+
+function startOdometer() {
+    const roots = document.querySelectorAll('.odo-root');
+    
+    roots.forEach((root, index) => {
+        const target = parseInt(root.getAttribute('data-target'));
+        const wrapper = root.querySelector('.odo-wrapper');
+        
+        // Posisi awal di angka 0
+        const digitHeight = 70; // Sesuai tinggi di CSS
+        const totalDigits = 10; // 0-9
+        
+        // Acak kecepatan & jeda supaya terlihat alami
+        const delay = index * 100;
+        const randomSpin = Math.floor(Math.random() * 3) + 2; // putar 2-4 putar penuh
+        
+        setTimeout(() => {
+            // Hitung posisi akhir: putar penuh + angka target
+            const offset = (randomSpin * totalDigits + target) * digitHeight;
+            wrapper.style.transform = `translateY(-${offset}px)`;
+        }, delay);
+    });
+}
+</script>
+
+</body>
+  </html>
+  
