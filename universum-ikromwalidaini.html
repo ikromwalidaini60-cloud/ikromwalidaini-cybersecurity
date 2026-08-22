@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSUM ikromwalidaini — Belum Pernah Ada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background: #000;
+            cursor: crosshair;
+        }
+
+        .galaksi {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(120, 0, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(255, 0, 128, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(0, 200, 255, 0.2) 0%, transparent 60%),
+                linear-gradient(180deg, #000010 0%, #050520 50%, #000008 100%);
+            z-index: -3;
+            animation: latarBerubah 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes latarBerubah {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(45deg); }
+        }
+
+        .cahaya {
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.25), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            transition: all 0.08s ease-out;
+            filter: blur(20px);
+        }
+
+        .konten {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .judul-utama {
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 
+                0 0 20px #0ff,
+                0 0 40px #0ff,
+                0 0 80px #0ff;
+            animation: teksBerkedip 2s ease-in-out infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        @keyframes teksBerkedip {
+            0% { opacity: 0.8; text-shadow: 0 0 20px #0ff, 0 0 40px #0ff; }
+            100% { opacity: 1; text-shadow: 0 0 30px #f0f, 0 0 60px #f0f, 0 0 100px #ff00c8; }
+        }
+
+        .nama-pembuat {
+            font-size: clamp(1.8rem, 7vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(90deg, #0ff, #f0f, #ff0, #0f0, #0ff);
+            background-size: 400% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pelangiBerjalan 3s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes pelangiBerjalan {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        .sub-judul {
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin-bottom: 50px;
+            animation: naikTurun 3s ease-in-out infinite;
+        }
+
+        @keyframes naikTurun {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .garis-cahaya {
+            width: 300px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #0ff, #f0f, transparent);
+            margin-bottom: 40px;
+            animation: garisBergerak 2s linear infinite;
+        }
+
+        @keyframes garisBergerak {
+            0% { transform: scaleX(0.5); opacity: 0.5; }
+            50% { transform: scaleX(1); opacity: 1; }
+            100% { transform: scaleX(0.5); opacity: 0.5; }
+        }
+
+        .tombol-masuk {
+            padding: 18px 60px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(90deg, #0ff, #f0f);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .tombol-masuk:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.8), 0 0 100px rgba(255, 0, 255, 0.5);
+        }
+
+        .lingkaran-putar {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 2px solid transparent;
+            border-top: 2px solid #0ff;
+            border-right: 2px solid #f0f;
+            border-radius: 50%;
+            animation: putar 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        .lingkaran-putar:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            animation-direction: reverse;
+            animation-duration: 15s;
+            border-top-color: #ff0;
+            border-right-color: #0ff;
+        }
+
+        @keyframes putar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .versi {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            z-index: 20;
+        }
+
+        /* === PARTIKEL LEDAKAN === */
+        .partikel-ledakan {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            box-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
+        }
+
+        @keyframes meledak {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.3);
+                opacity: 0;
+            }
+        }
+
+        .cahaya-pusat {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #fff, #ff0, #f0f, #0ff);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 101;
+            box-shadow: 0 0 100px #fff, 0 0 200px #f0f, 0 0 300px #0ff;
+        }
+
+        @keyframes kilatPusat {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(3); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="galaksi"></div>
+    <div class="cahaya" id="cahayaMouse"></div>
+
+    <div class="konten" id="isiKonten">
+        <div class="lingkaran-putar"></div>
+        <div class="lingkaran-putar"></div>
+        
+        <h1 class="judul-utama">SELAMAT DATANG DI</h1>
+        <h2 class="nama-pembuat">ikromwalidaini</h2>
+        <div class="garis-cahaya"></div>
+        <p class="sub-judul">🌌 Dunia digital yang belum pernah kamu lihat sebelumnya<br>Gerakkan mouse kamu & lihat keajaibannya ✨</p>
+        <button class="tombol-masuk" onclick="masuk()">🚀 MASUK KE DUNIA BARU</button>
+    </div>
+
+    <p class="versi">UNIVERSUM v1.0 — ikromwalidaini</p>
+
+<script>
+// CAHAYA MENGIKUTI MOUSE
+const cahaya = document.getElementById('cahayaMouse');
+document.addEventListener('mousemove', function(e) {
+    cahaya.style.left = e.clientX + 'px';
+    cahaya.style.top = e.clientY + 'px';
+});
+
+// BIKIN BINTANG LATAR
+for (let i = 0; i < 200; i++) {
+    const bintang = document.createElement('div');
+    bintang.style.position = 'fixed';
+    bintang.style.width = Math.random() * 3 + 1 + 'px';
+    bintang.style.height = bintang.style.width;
+    bintang.style.background = 'white';
+    bintang.style.borderRadius = '50%';
+    bintang.style.left = Math.random() * 100 + '%';
+    bintang.style.top = Math.random() * 100 + '%';
+    bintang.style.opacity = Math.random() * 0.8 + 0.2;
+    bintang.style.zIndex = '-3';
+    bintang.style.animation = `berkedip ${Math.random() * 3 + 2}s ease-in-out infinite alternate`;
+    document.body.appendChild(bintang);
+}
+
+const styleBintang = document.createElement('style');
+styleBintang.textContent = `
+    @keyframes berkedip {
+        0% { opacity: 0.2; }
+        100% { opacity: 1; }
+    }
+`;
+document.head.appendChild(styleBintang);
+
+// ==============================================
+// FUNGSI LEDAKAN — SUDAH DIPERBAIKI! PASTI KELUAR! 💥
+// ==============================================
+function masuk() {
+    // 1. KILAT CAHAYA DI TENGAH
+    const kilat = document.createElement('div');
+    kilat.className = 'cahaya-pusat';
+    kilat.style.animation = 'kilatPusat 1.5s ease-out forwards';
+    document.body.appendChild(kilat);
+    setTimeout(() => kilat.remove(), 1500);
+
+    // 2. 80 PARTIKEL MENYEBAR KE SEGALA ARAH — LEBIH BANYAK & LEBIH LAMA!
+    const warnaLedakan = ['#00ffff', '#ff00ff', '#ffff00', '#00ff88', '#ff6600', '#ff0000', '#ffffff'];
+    
+    for (let i = 0; i < 80; i++) {
+        const p = document.createElement('div');
+        p.className = 'partikel-ledakan';
+        p.style.background = warnaLedakan[Math.floor(Math.random() * warnaLedakan.length)];
+        p.style.color = p.style.background;
+        
+        // Ukuran acak
+        const ukuran = Math.random() * 20 + 10;
+        p.style.width = ukuran + 'px';
+        p.style.height = ukuran + 'px';
+        
+        // Arah acak 360 derajat
+        const sudut = (i / 80) * Math.PI * 2;
+        const jarak = 200 + Math.random() * 400;
+        const tx = Math.cos(sudut) * jarak;
+        const ty = Math.sin(sudut) * jarak;
+        
+        // Animasi meledak ke luar
+        p.style.transition = `all 2.5s cubic-bezier(0.17, 0.67, 0.83, 0.67)`;
+        
+        document.body.appendChild(p);
+        
+        // Jalankan ledakan
+        setTimeout(() => {
+            p.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0.2)`;
+            p.style.opacity = '0';
+        }, 50);
+        
+        // Hapus setelah selesai
+        setTimeout(() => p.remove(), 2500);
+    }
+
+    // 3. UBAH WARNA LATAR MENYALA
+    document.body.style.transition = 'background 0.3s ease';
+    document.body.style.background = '#fff';
+    setTimeout(() => {
+        document.body.style.background = '';
+    }, 200);
+
+    // 4. TAMPILKAN PESAN
+    setTimeout(() => {
+        alert('🌌 SELAMAT DATANG DI UNIVERSUM ikromwalidaini!\n\n💥 LIHAT BUKTI LEDAKANNYA?!\n\nDunia digital yang belum pernah ada sebelumnya! ✨🚀');
+    }, 800);
+}
+</script>
+
+</body>
+</html>
