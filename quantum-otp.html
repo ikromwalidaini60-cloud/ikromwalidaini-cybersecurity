@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUANTUM OTP | Odometer 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary: #00f0ff;
+            --secondary: #9d00ff;
+            --accent: #ff00c8;
+            --dark: #050510;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(157, 0, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 0, 200, 0.1) 0%, transparent 60%);
+            z-index: -2;
+        }
+        
+        .grid-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(40px); }
+        }
+        
+        .otp-container {
+            perspective: 1000px;
+        }
+        
+        .digit-box {
+            width: 80px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+        
+        .digit-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .digit-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            background: rgba(10, 10, 30, 0.7);
+            border: 2px solid rgba(0, 240, 255, 0.5);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 0 20px rgba(0, 240, 255, 0.3),
+                inset 0 0 15px rgba(0, 240, 255, 0.1);
+            text-shadow: 0 0 10px var(--primary);
+        }
+        
+        .digit-box.active .digit-face {
+            border-color: var(--accent);
+            box-shadow: 
+                0 0 30px rgba(255, 0, 200, 0.5),
+                inset 0 0 20px rgba(255, 0, 200, 0.2);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 40px var(--primary);
+        }
+        
+        .btn-verify {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-verify:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);
+        }
+        
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            z-index: 100;
+        }
+        
+        .success-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-gradient"></div>
+    <div class="grid-lines"></div>
+    
+    <div class="container mx-auto px-6 text-center">
+        <div class="mb-12 floating">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500">QUANTUM OTP</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-xl mx-auto">Sistem verifikasi dengan teknologi odometer 3D yang belum pernah ada sebelumnya</p>
+        </div>
+        
+        <div class="otp-container">
+            <div class="flex justify-center gap-4 md:gap-6 mb-10">
+                <div class="digit-box" data-index="0">
+                    <div class="digit-inner">
+                        <div class="digit-face" id="digit-0">_</div>
+                    </div>
+                </div>
+                <div class="digit-box" data-index="1">
+                    <div class="digit-inner">
+                        <div class="digit-face" id="digit-1">_</div>
+                    </div>
+                </div>
+                <div class="digit-box" data-index="2">
+                    <div class="digit-inner">
+                        <div class="digit-face" id="digit-2">_</div>
+                    </div>
+                </div>
+                <div class="digit-box" data-index="3">
+                    <div class="digit-inner">
+                        <div class="digit-face" id="digit-3">_</div>
+                    </div>
+                </div>
+                <div class="digit-box" data-index="4">
+                    <div class="digit-inner">
+                        <div class="digit-face" id="digit-4">_</div>
+                    </div>
+                </div>
+                <div class="digit-box" data-index="5">
+                    <div class="digit-inner">
+                        <div class="digit-face" id="digit-5">_</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-gray-400 mb-6">Masukkan kode OTP 6 digit yang dikirim ke perangkat Anda</p>
+            
+            <div class="flex justify-center mb-8">
+                <button id="resendBtn" class="px-6 py-2 border border-cyan-500/50 text-cyan-400 rounded-lg hover:bg-cyan-500/20 transition-all mr-4">
+                    <i class="fa fa-refresh mr-2"></i>Kirim Ulang
+                </button>
+                <button id="verifyBtn" class="btn-verify px-8 py-2 text-white font-semibold rounded-lg shadow-lg">
+                    <i class="fa fa-check-circle mr-2"></i>VERIFIKASI
+                </button>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-gray-500 text-sm">Atau ketik angka di bawah ini:</p>
+                <div class="mt-4 flex justify-center">
+                    <input type="text" id="otpInput" maxlength="6" class="px-6 py-3 bg-black/50 border border-purple-500/50 rounded-lg text-white text-center text-2xl w-64 focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="Ketik OTP...">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="success-overlay" id="successOverlay">
+        <div class="text-center">
+            <div class="text-8xl text-green-400 mb-6">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <h2 class="text-4xl font-bold text-white mb-4 glow-text">VERIFIKASI BERHASIL!</h2>
+            <p class="text-xl text-gray-300">Akses diberikan. Sistem terkoneksi.</p>
+            <button id="closeSuccess" class="mt-8 px-8 py-3 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-all">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        const digitElements = document.querySelectorAll('.digit-face');
+        const digitBoxes = document.querySelectorAll('.digit-box');
+        const otpInput = document.getElementById('otpInput');
+        const verifyBtn = document.getElementById('verifyBtn');
+        const resendBtn = document.getElementById('resendBtn');
+        const successOverlay = document.getElementById('successOverlay');
+        const closeSuccess = document.getElementById('closeSuccess');
+        
+        let currentIndex = 0;
+        let targetOTP = '';
+        
+        // Generate OTP acak
+        function generateOTP() {
+            targetOTP = Math.floor(100000 + Math.random() * 900000).toString();
+            console.log('Kode OTP:', targetOTP); // Cek di console untuk testing
+            alert(`Kode OTP Anda: ${targetOTP}`);
+        }
+        
+        // Efek putar angka odometer
+        function spinDigit(index, targetValue, callback) {
+            let current = 0;
+            const interval = setInterval(() => {
+                digitElements[index].textContent = current;
+                digitBoxes[index].classList.add('active');
+                current++;
+                if (current > 9) current = 0;
+            }, 50);
+            
+            setTimeout(() => {
+                clearInterval(interval);
+                digitElements[index].textContent = targetValue;
+                digitBoxes[index].classList.remove('active');
+                if (callback) callback();
+            }, 800);
+        }
+        
+        // Update tampilan OTP
+        function updateDisplay() {
+            const value = otpInput.value.replace(/\D/g, '');
+            currentIndex = value.length;
+            
+            for (let i = 0; i < 6; i++) {
+                if (i < value.length) {
+                    digitElements[i].textContent = value[i];
+                } else {
+                    digitElements[i].textContent = '_';
+                }
+                digitBoxes[i].classList.toggle('active', i === currentIndex);
+            }
+        }
+        
+        // Verifikasi OTP
+        function verifyOTP() {
+            const input = otpInput.value;
+            if (input.length !== 6) {
+                alert('Masukkan 6 digit OTP lengkap!');
+                return;
+            }
+            
+            let index = 0;
+            const spinNext = () => {
+                if (index < 6) {
+                    spinDigit(index, targetOTP[index], () => {
+                        index++;
+                        spinNext();
+                    });
+                } else {
+                    setTimeout(() => {
+                        if (input === targetOTP) {
+                            successOverlay.classList.add('show');
+                            createParticles();
+                        } else {
+                            alert('Kode OTP salah! Coba lagi.');
+                            otpInput.value = '';
+                            updateDisplay();
+                        }
+                    }, 500);
+                }
+            };
+            spinNext();
+        }
+        
+        // Efek partikel saat berhasil
+        function createParticles() {
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.background = ['#00f0ff', '#9d00ff', '#ff00c8'][Math.floor(Math.random() * 3)];
+                document.body.appendChild(particle);
+                
+                const size = Math.random() * 15 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                particle.animate([
+                    { transform: 'scale(0) translateY(0)', opacity: 1 },
+                    { transform: 'scale(1.5) translateY(-100px)', opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 1000,
+                    easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                    delay: Math.random() * 500
+                }).onfinish = () => particle.remove();
+            }
+        }
+        
+        // Event Listeners
+        otpInput.addEventListener('input', updateDisplay);
+        verifyBtn.addEventListener('click', verifyOTP);
+        resendBtn.addEventListener('click', generateOTP);
+        closeSuccess.addEventListener('click', () => {
+            successOverlay.classList.remove('show');
+            otpInput.value = '';
+            updateDisplay();
+            generateOTP();
+        });
+        
+        // Mulai
+        generateOTP();
+        digitBoxes[0].classList.add('active');
+    </script>
+</body>
+</html>
