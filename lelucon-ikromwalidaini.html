@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ TUNGGU DULU! — ikromwalidaini</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            transition: background 0.1s;
+        }
+
+        .layar {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tulisan-besar {
+            font-size: clamp(2.5rem, 12vw, 5rem);
+            font-weight: 900;
+            color: white;
+            text-shadow: 4px 4px 0 #000, -4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000;
+            margin-bottom: 30px;
+            animation: getar 0.1s infinite alternate;
+        }
+
+        .tulisan-bawah {
+            font-size: clamp(1.2rem, 5vw, 2rem);
+            color: white;
+            text-shadow: 3px 3px 0 #000;
+            margin-bottom: 40px;
+        }
+
+        .nama {
+            font-size: clamp(1.5rem, 6vw, 3rem);
+            background: linear-gradient(90deg, #ff0, #f0f, #0ff, #ff0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            animation: pelangi 1s linear infinite;
+        }
+
+        .tombol-aman {
+            padding: 20px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #00ff00, #00cc00);
+            color: white;
+            border: 4px solid #000;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 #000;
+            transition: all 0.2s;
+        }
+
+        .tombol-aman:active {
+            transform: translateY(4px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        .bintang {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 5;
+            animation: jatuh 3s ease-in forwards;
+        }
+
+        @keyframes getar {
+            0% { transform: translateX(-3px) rotate(-1deg); }
+            100% { transform: translateX(3px) rotate(1deg); }
+        }
+
+        @keyframes pelangi {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes jatuh {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .akhir {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .akhir h1 {
+            font-size: 3rem;
+            color: #00ff88;
+            margin-bottom: 20px;
+        }
+
+        .akhir p {
+            font-size: 1.3rem;
+            color: white;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body id="badan">
+
+    <div class="layar" id="halamanAwal">
+        <h1 class="tulisan-besar" id="teksUtama">⚠️ PERINGATAN!</h1>
+        <p class="tulisan-bawah">HP ANDA SEDANG DIAWASI OLEH</p>
+        <p class="nama">ikromwalidaini</p>
+        <p class="tulisan-bawah" style="margin-top: 20px; font-size: 1rem;">😱 Jangan panik... ini cuma lelucon!</p>
+        <button class="tombol-aman" onclick="lanjut()">✅ KLIK UNTUK KESELAMATAN!</button>
+    </div>
+
+    <div class="akhir" id="halamanAkhir">
+        <h1>✅ HP ANDA AMAN!</h1>
+        <p>Tenang saja, tidak ada yang rusak 😂<br><br>Anda baru saja dikerjai oleh <strong style="color:#ffd700;">ikromwalidaini</strong> 😎<br><br>Terima kasih sudah bermain! 🤍</p>
+    </div>
+
+<script>
+// WARNA LATAR BERKEDIP-KEDEP
+const warna = ['#ff0000', '#ff8800', '#ffff00', '#00ff00', '#00ffff', '#0088ff', '#ff00ff', '#ff0088'];
+let indeks = 0;
+
+function gantiWarna() {
+    document.getElementById('badan').style.background = warna[indeks];
+    indeks = (indeks + 1) % warna.length;
+}
+
+setInterval(gantiWarna, 100);
+
+// BINTANG BERJATUH
+function bikinBintang() {
+    const bintang = document.createElement('div');
+    bintang.className = 'bintang';
+    bintang.innerHTML = ['⭐', '🌟', '✨', '💫', '🎉', '🎊'][Math.floor(Math.random() * 6)];
+    bintang.style.left = Math.random() * 100 + 'vw';
+    bintang.style.top = '-50px';
+    document.body.appendChild(bintang);
+    
+    setTimeout(() => bintang.remove(), 3000);
+}
+
+setInterval(bikinBintang, 200);
+
+// GANTI TEKS SECARA BERTAHAP
+const teks = [
+    '⚠️ PERINGATAN!',
+    '📡 SINYAL TERDETEKSI!',
+    '🔒 SISTEM DIKUNCI!',
+    '👤 MENCARI PEMILIK...',
+    '✅ DITEMUKAN: ikromwalidaini!'
+];
+
+let i = 0;
+setInterval(() => {
+    if (i < teks.length) {
+        document.getElementById('teksUtama').textContent = teks[i];
+        i++;
+    }
+}, 1200);
+
+// TOMBOL LANJUT
+function lanjut() {
+    document.getElementById('halamanAwal').style.display = 'none';
+    document.getElementById('halamanAkhir').style.display = 'flex';
+}
+</script>
+
+</body>
+</html>
