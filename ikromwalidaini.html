@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Pembuatan Website Digital — ikromwalidaini</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(180deg, #0a1628 0%, #1a2d4a 50%, #0f1e35 100%);
+            min-height: 100vh;
+        }
+        
+        .text-gradient-1 {
+            background: linear-gradient(90deg, #ffd700, #ff9500, #ff6b00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .text-gradient-2 {
+            background: linear-gradient(90deg, #00ff88, #00ddff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-layanan {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.4));
+            border: 1px solid rgba(0, 255, 200, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .card-layanan:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 200, 0.7);
+            box-shadow: 0 10px 40px rgba(0, 255, 200, 0.2);
+        }
+        
+        .fitur-check {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid #00ff88;
+        }
+        
+        .btn-wa {
+            background: linear-gradient(90deg, #25d366, #128c7e);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-wa:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.2), inset 0 0 20px rgba(0, 255, 200, 0.05);
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.7); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .nama-pembuat {
+            background: linear-gradient(90deg, #ffd700, #00ff88, #00ddff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+<!-- Header Utama -->
+<section class="py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-3">
+            <span class="text-gradient-1">BISA BUAT</span>
+        </h1>
+        <h2 class="text-3xl md:text-5xl font-black mb-4 text-white">
+            BERBAGAI MACAM <span class="text-gradient-2">WEBSITE DIGITAL!</span>
+        </h2>
+        <p class="text-xl text-cyan-300 mb-8">SOLUSI DIGITAL UNTUK KEBUTUHAN ANDA</p>
+    </div>
+</section>
+
+<!-- Daftar Layanan — DIPERBANYAK! -->
+<section class="px-4 pb-12">
+    <div class="max-w-5xl mx-auto">
+        <h3 class="text-2xl font-bold text-center text-yellow-400 mb-6">📋 JENIS WEBSITE YANG BISA DIBUAT</h3>
+        
+        <div class="grid md:grid-cols-2 gap-4 mb-10">
+            <!-- Kolom 1 -->
+            <div class="space-y-3">
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-red-400"><i class="fas fa-ring"></i></span>
+                    <span class="font-semibold">Undangan Pernikahan Digital</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-purple-400"><i class="fas fa-images"></i></span>
+                    <span class="font-semibold">Galeri Foto Kenangan</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-orange-400"><i class="fas fa-birthday-cake"></i></span>
+                    <span class="font-semibold">Undangan Ulang Tahun / Khitanan / Syukuran</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-cyan-400"><i class="fas fa-id-card"></i></span>
+                    <span class="font-semibold">Kartu Nama Digital</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-green-400"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="font-semibold">Daftar Harga & Katalog Produk Usaha</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-yellow-400"><i class="fas fa-file-alt"></i></span>
+                    <span class="font-semibold">Brosur & Profil Usaha</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-pink-400"><i class="fas fa-edit"></i></span>
+                    <span class="font-semibold">Formulir Pesanan Otomatis ke WhatsApp</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-red-300"><i class="fas fa-bullhorn"></i></span>
+                    <span class="font-semibold">Iklan & Promosi Bisnis</span>
+                </div>
+            </div>
+            
+            <!-- Kolom 2 — TAMBAHAN LAYANAN BARU! -->
+            <div class="space-y-3">
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-blue-400"><i class="fas fa-laptop-code"></i></span>
+                    <span class="font-semibold">Portofolio & Galeri Hasil Karya</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-lime-400"><i class="fas fa-store"></i></span>
+                    <span class="font-semibold">Toko Online Sederhana</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-amber-400"><i class="fas fa-utensils"></i></span>
+                    <span class="font-semibold">Daftar Menu Makanan & Minuman</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-rose-400"><i class="fas fa-images"></i></span>
+                    <span class="font-semibold">Album Foto & Dokumentasi</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-teal-400"><i class="fas fa-building"></i></span>
+                    <span class="font-semibold">Profil Perusahaan / Usaha</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-violet-400"><i class="fas fa-calendar-check"></i></span>
+                    <span class="font-semibold">Sistem Reservasi / Pemesanan Jadwal</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-emerald-400"><i class="fas fa-link"></i></span>
+                    <span class="font-semibold">Link Bio / Kumpulan Link Sosial Media</span>
+                </div>
+                <div class="card-layanan rounded-xl p-4 flex items-center gap-4">
+                    <span class="text-2xl text-sky-400"><i class="fas fa-info-circle"></i></span>
+                    <span class="font-semibold">Landing Page / Halaman Promosi Produk</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keunggulan -->
+        <div class="bg-blue-900/40 rounded-xl p-5 border border-cyan-500/30 glow-box mb-8">
+            <h3 class="text-xl font-bold text-center text-cyan-300 mb-4">✨ KEUNGGULAN WEBSITE INI</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="fitur-check p-3 rounded-r-lg">
+                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                    Tampilan rapi & bisa dibuka di HP maupun komputer
+                </div>
+                <div class="fitur-check p-3 rounded-r-lg">
+                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                    Cukup bagikan 1 link saja ke siapa saja
+                </div>
+                <div class="fitur-check p-3 rounded-r-lg">
+                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                    Bisa diubah kapan saja dengan mudah
+                </div>
+                <div class="fitur-check p-3 rounded-r-lg">
+                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                    Hemat biaya cetak & <span class="text-yellow-400 font-bold">GRATIS Hosting!</span>
+                </div>
+                <div class="fitur-check p-3 rounded-r-lg">
+                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                    Tampilan modern, menarik & profesional
+                </div>
+                <div class="fitur-check p-3 rounded-r-lg">
+                    <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                    Bisa langsung terhubung ke WhatsApp, Media Sosial & Lainnya
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bagian Toko / Jualan -->
+        <div class="bg-gradient-to-r from-green-900/50 to-teal-900/50 rounded-2xl p-6 border-2 border-green-400/50 glow-box mb-8">
+            <h2 class="text-3xl font-black text-center mb-6">
+                <span class="text-gradient-2">WEBSITE UNTUK JUALAN</span> 🛒
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-green-400 text-xl mt-1"></i>
+                        <p>Daftar Barang / Produk beserta Harga lengkap</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-green-400 text-xl mt-1"></i>
+                        <p>Foto Produk agar terlihat jelas & menarik</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-green-400 text-xl mt-1"></i>
+                        <p>Keterangan barang & cara pesan yang mudah dipahami</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-green-400 text-xl mt-1"></i>
+                        <p>Tombol Langsung ke WhatsApp untuk pesanan cepat</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-green-400 text-xl mt-1"></i>
+                        <p>Tampilan rapi, bisa dibuka di HP & komputer</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-green-400 text-xl mt-1"></i>
+                        <p>Bisa ditambahin QRIS, Lokasi, & Kontak Usaha</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="bg-white/10 rounded-xl p-6 text-center pulse-glow">
+                        <div class="text-6xl mb-3">📱💻</div>
+                        <p class="text-lg font-semibold">Siap Jualan!</p>
+                        <p class="text-sm text-green-300">Tinggal klik & langsung pesan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tombol Hubungi -->
+        <div class="text-center mb-10">
+            <a href="https://wa.me/62895411239265" target="_blank" class="btn-wa inline-block px-10 py-4 rounded-full text-xl font-bold text-white">
+                <i class="fab fa-whatsapp mr-2 text-2xl"></i>
+                Yang berminat silakan hubungi saya! 😊
+            </a>
+            <p class="mt-4 text-cyan-300 text-sm">Ganti nomor WA di link dengan nomor kamu!</p>
+        </div>
+
+        <!-- NAMA PEMBUAT — DI BAWAH SEKALI! ✅ -->
+        <div class="text-center py-6 border-t border-cyan-500/30 mt-8">
+            <p class="text-lg text-gray-400 mb-2">Dibuat dengan ❤️ oleh</p>
+            <p class="text-3xl nama-pembuat font-black">ikromwalidaini</p>
+            <p class="text-sm text-cyan-400 mt-2">Solusi Digital untuk Semua</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
